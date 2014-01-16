@@ -77,14 +77,14 @@ a:hover, a:active {
   width: 100px;
 }
 
-ul.categories {
+ul.pages {
   list-style-type: none;
   margin: 3px 0 0 0;
   padding: 0;
   overflow: hidden;
 }
 
-ul.categories li {
+ul.pages li {
   background: #007755;
   float: left;
   font-size: 12px;
@@ -94,17 +94,12 @@ ul.categories li {
   text-transform: uppercase;
 }
 
-ul.categories li.categories-title {
-  background: transparent;
-  padding: 2px 6px 2px 0px;
-}
-
-ul.categories li a:link, ul.categories li a:visited {
+ul.pages li a:link, ul.pages li a:visited {
   color: #ffffff;
   text-decoration: none;
 }
 
-ul.categories li a:hover, ul.categories li a:active {
+ul.pages li a:hover, ul.pages li a:active {
   border-bottom: 1px dotted #ffffff;
 }
 
@@ -113,7 +108,7 @@ ul.categories li a:hover, ul.categories li a:active {
 }
 
 .post {
-  margin-bottom: 40px;
+  margin: 20px 0;
 }
 
 .post-header {
@@ -164,7 +159,7 @@ ul.categories li a:hover, ul.categories li a:active {
 }
 
 #post-navigation {
-  margin-bottom: 10px;
+  margin: 40px 0 10px 0;
   text-transform: uppercase;
 }
 
