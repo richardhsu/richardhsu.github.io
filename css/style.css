@@ -1,0 +1,204 @@
+/* Richard Hsu's Blog CSS Style
+ * I'm not going to be weird and add copyrights or usage rights because
+ * webdesign should be about learning, experimentation, sharing, and fun!
+ * So use whatever you'd like that you see fit!
+ */
+
+/* General HTML Elements */
+body {
+  background: #eeeeee;
+  color: #222222;
+  font: normal normal 14px 'Helvetica Neue', Helvetica, Arial;
+  line-height: 1.8em;
+  margin: 0 auto;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+blockquote {
+  border-left: 3px solid #cccccc;
+  padding-left: 10px;
+}
+
+
+a:link, a:visited {
+  color: #559977;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  color: #336644;
+}
+
+/* Generalized Custome Style Classes */
+.left { float: left; }
+.right { float: right; }
+.center { text-align: center; margin: 0 auto; }
+
+.clearfix:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+/* Custom Layout Elements */
+#header {
+  background: #009977;
+  border-bottom: 2px solid #ffffff;
+  color: #ffffff;
+}
+
+#container {
+  background: #fdfdfd;
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0;
+}
+
+.content-jar {  /* Center to content area */
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 10px;
+}
+
+.avatar {
+  border: 3px solid #ffffff;
+  border-radius: 100px;
+  height: 100px;
+  margin-right: 20px;
+  overflow: hidden;
+  width: 100px;
+}
+
+ul.categories {
+  list-style-type: none;
+  margin: 3px 0 0 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+ul.categories li {
+  background: #007755;
+  float: left;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0 5px 0 0;
+  padding: 2px 6px;
+  text-transform: uppercase;
+}
+
+ul.categories li.categories-title {
+  background: transparent;
+  padding: 2px 6px 2px 0px;
+}
+
+ul.categories li a:link, ul.categories li a:visited {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+ul.categories li a:hover, ul.categories li a:active {
+  border-bottom: 1px dotted #ffffff;
+}
+
+.listing {
+  padding: 30px;
+}
+
+.post {
+  margin-bottom: 40px;
+}
+
+.post-header {
+  margin-bottom: 15px;
+}
+
+.post-header h1 {
+  margin: 0 0 5px 0;
+  padding: 0;
+}
+
+.post-header h1 a:link, .post-header h1 a:visited {
+  color: #338866;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.post-header h1 a:hover, .post-header h1 a:active {
+  border-bottom: 1px dotted #338866;
+}
+
+.post-date {
+  color: #555555;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.post-footer a:link, .post-footer a:visited {
+  background: #aaccbb;
+  color: #005533;
+  display: inline-block;
+  font-weight: bold;
+  margin-top: 10px;
+  padding: 5px 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.post-footer a:hover, .post-footer a:active {
+  background: #bbddcc;
+  color: #227755;
+  display: inline-block;
+  font-weight: bold;
+  margin-top: 10px;
+  padding: 5px 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+#post-navigation {
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+#post-navigation .center:before,
+#post-navigation .center:after {
+  content: '\2014';
+  font-weight: bold;
+  padding: 0 0.3em;
+}
+
+#post-navigation .left a:before {
+  content: '\00AB';
+  padding: 0 0.3em;
+}
+
+#post-navigation .right a:after {
+  content: '\00BB';
+  padding: 0 0.3em;
+}
+
+#post-navigation a.disabled:link,
+#post-navigation a.disabled:visited,
+#post-navigation a.disabled:hover,
+#post-navigation a.disabled:active {
+  color: #cccccc;
+  pointer-events: none;
+}
+
+.back-to-index {
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.back-to-index a:before {
+  content: '\2190';
+  padding: 0 0.3em;
+}

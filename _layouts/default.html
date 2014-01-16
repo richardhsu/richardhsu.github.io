@@ -1,44 +1,40 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ page.title }}</title>
-        <meta name="viewport" content="width=device-width">
-
-        <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="/css/syntax.css">
-
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="/css/main.css">
-
-    </head>
-    <body>
-
-        <div class="site">
-          <div class="header">
-            <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-            <a class="extra" href="/">home</a>
-          </div>
-
-          {{ content }}
-
-          <div class="footer">
-            <div class="contact">
-              <p>
-                Your Name<br />
-                What You Are<br />
-                you@example.com
-              </p>
-            </div>
-            <div class="contact">
-              <p>
-                <a href="https://github.com/yourusername">github.com/yourusername</a><br />
-                <a href="https://twitter.com/yourusername">twitter.com/yourusername</a><br />
-              </p>
-            </div>
-          </div>
-        </div>
-
-    </body>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <title>{{ page.title }}</title>
+  <meta name="author" content="Richard Hsu">
+  <meta name="keywords" content="richard hsu, blog, ideas, thoughts" />
+  <meta name="description" content="Richard Hsu's blog about anything and everything." />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="{{ site.url }}/css/syntax.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="{{ site.url }}/css/style.css" type="text/css" media="screen, projection" />
+</head>
+<body>
+<div id="header">
+  <div class="content-jar clearfix">
+    <div class="avatar left"><img src="{{ site.url }}/images/profile.jpeg" height="100" width="100" /></div>
+    <div class="description">
+      <strong>Welcome to Richard Hsu's blog!</strong><br />
+      Here, I explore different subjects such as food, programming, tv shows, movies, and really anything
+      I find in life! I hope to share my journey and adventures with you! Thanks for visiting!
+    </div>
+    <!-- Categories and Links to their Archives -->
+    <ul class="categories">
+      <li class="categories-title">Categories:</li>
+      <li><a href="{{ site.url }}">Home</a></li>
+      {% for cat in site.categories %}
+        <li><a href="#">{{ cat[0] }}</a></li>
+      {% endfor %}
+    </ul>
+    <!-- /End Categories -->
+  </div>
+</div>
+<div id="container">
+  <div class="content-jar listing">
+    <!-- Beginning of Posts Listing -->
+    {{ content }}
+    <!-- /End Posts Listing -->
+  </div>
+</div>
+</body>
 </html>

@@ -1,9 +1,11 @@
 ---
 layout: default
 ---
-<h2>{{ page.title }}</h2>
-<p class="meta">{{ page.date | date_to_string }}</p>
-
+<div class="back-to-index"><a href="{{ site.url }}">Back to Index</a></div>
 <div class="post">
-{{ content }}
+  <div class="post-header">
+    <h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
+    <span class="post-date">{{ page.date | date: "%B %-d %Y" }}</span>
+  </div>
+  {{ content }}
 </div>
