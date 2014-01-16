@@ -1,6 +1,7 @@
 name: Richard Hsu's Blog
 url: "http://www.richardhsu.me"
 
+excerpt_separator: <!--more-->
 markdown: redcarpet
 paginate: 5
 paginate_path: "page:num"

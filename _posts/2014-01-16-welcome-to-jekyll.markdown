@@ -11,6 +11,8 @@ actually create my blog using Jekyll. Get a little more gritty with the process
 and learn a tool that has been around for "ages". I hope you enjoy this new
 adventure and journey!
 
+<!--more-->
+
 This is just a test post to start things off so don't mind the rest after this.
 
 * Some bullet points to seem like there are important things to be done.
