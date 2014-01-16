@@ -202,3 +202,8 @@ ul.categories li a:hover, ul.categories li a:active {
   content: '\2190';
   padding: 0 0.3em;
 }
+
+/* DISQUS */
+#disqus_thread {
+  margin-top: 20px;
+}
