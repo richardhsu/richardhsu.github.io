@@ -50,6 +50,15 @@ pre {
           border-radius: 4px;
 }
 
+pre code {
+  padding: 0;
+  color: inherit;
+  white-space: pre;
+  white-space: pre-wrap;
+  background-color: transparent;
+  border: 0;
+}
+
 a:link, a:visited {
   color: #559977;
   font-weight: bold;
