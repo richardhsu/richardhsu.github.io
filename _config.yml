@@ -1,6 +1,5 @@
 name: Richard Hsu's Blog
 url: "http://www.richardhsu.me"
-comments: true
 
 markdown: redcarpet
 paginate: 5
