@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title:  "Welcome to Jekyll!"
-date:   2014-01-16 00:27:39
+date:   2014-01-15 17:25:00
 ---
 
 I'm starting to blog properly this time! I really want to start keeping track of
