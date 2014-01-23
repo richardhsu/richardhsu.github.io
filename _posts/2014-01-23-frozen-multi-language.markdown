@@ -12,7 +12,9 @@ favorite, it still has the charm to make it a classic in my books. Anyways,
 I just wanted to share the multi-language version of "Let It Go" as I highly
 enjoyed it:
 
-{% youtube OC83NA5tAGE %}
+<div class="center">
+  <iframe width="560" height="315" src="http://www.youtube.com/embed/OC83NA5tAGE?color=white&theme=light" frameborder="0"> </iframe>
+</div>
 
 Isn't that nice?! At first I actually didn't enjoy this song but it grew on me
 especially considering how catchy it can be! Plus Idina Menzel performing the
