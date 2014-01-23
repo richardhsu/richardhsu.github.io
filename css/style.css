@@ -80,6 +80,15 @@ a:hover, a:active {
   color: #336644;
 }
 
+iframe {
+  border: 0px;
+  margin: 0 auto;
+}
+
+iframe:not([seamless]) {
+  border: 0px;
+}
+
 /* Generalized Custome Style Classes */
 .left { float: left; }
 .right { float: right; }

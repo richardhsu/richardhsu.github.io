@@ -12,4 +12,10 @@ favorite, it still has the charm to make it a classic in my books. Anyways,
 I just wanted to share the multi-language version of "Let It Go" as I highly
 enjoyed it:
 
-{% youtube OC83NA5tAGE 900 506 %}
+{% youtube OC83NA5tAGE %}
+
+Isn't that nice?! At first I actually didn't enjoy this song but it grew on me
+especially considering how catchy it can be! Plus Idina Menzel performing the
+original is absolutely amazing! I've seen other covers but she definitely pulls
+off the song so beautifully and her range is ridiculous as always! Let me know
+what you think!
