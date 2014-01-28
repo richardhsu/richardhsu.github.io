@@ -10,8 +10,6 @@ ankle wasn't feeling well over the weekend to the point that walking would be
 painful. I think I've fully recovered though so I should definitely get back to
 running.
 
-<!--more-->
-
 It was funny though, I had dreams of running in the morning. At least part of me
 was wanting to do it. Dreams are interesting, aren't they? I remember clearly
 in my dream getting out of bed and then running around the neighborhood.
@@ -19,6 +17,8 @@ Unfortunately it was easy to tell it was a dream because I didn't eat a quick
 breakfast nor did I brush my teeth which I always do in the morning. The crazy
 part was this dream happened 3 different times with 3 different scenarios, all
 very realistic.
+
+<!--more-->
 
 Remember the following were dreams:
 
