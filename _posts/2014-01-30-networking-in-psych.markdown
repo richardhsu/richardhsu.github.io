@@ -23,14 +23,12 @@ Most episodes, I just enjoy for the comedy and the crime solving but this one
 I took quite more interest because of my own interests or for nostalgia. My
 biggest interest is Computer Security and Networking which I wanted to discuss!
 
-First, this is the clip that just me smile as it seemed irrelevant but quite a
+First, this is the clip that just made me smile as it seemed irrelevant but quite a
 drop in words:
 
 <div class="center">
   <iframe width="560" height="315" src="http://www.youtube.com/embed/kOv_y0kZoTs?color=white&theme=light" frameborder="0"> </iframe>
 </div>
-
-To quote:
 
 > Manager: I don't suppose either of you can create an 802.1Q spanning tree loop
 > using auto forwarding non-Wintel based equipment?
