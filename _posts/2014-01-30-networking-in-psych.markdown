@@ -14,7 +14,7 @@ really hit some interest bones. The episode contained:
 1. Acapella singing which I do enjoy and wish I could sing and be part of a
 quartet or something.
 1. Computer Security and Networking references which I'll discuss.
-1. American Ninja which hilariously, I didn't understand the name drop reference
+1. [American Ninja][americanninja] which hilariously, I didn't understand the name drop reference
 because I never knew the actor's name so I assumed he was the director.
 
 <!--more-->
@@ -75,3 +75,4 @@ Let me know what you think in the comments!
 [psych]: http://en.wikipedia.org/wiki/Psych
 [allthat]: http://en.wikipedia.org/wiki/All_That
 [familymatters]: http://en.wikipedia.org/wiki/Family_Matters
+[americanninja]: http://en.wikipedia.org/wiki/American_Ninja
