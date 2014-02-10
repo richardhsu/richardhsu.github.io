@@ -25,7 +25,7 @@ functions to begin with!
 
 <!--more-->
 
-# What is Netcode?
+## What is Netcode?
 
 If you've been keeping along, you know I enjoy networking! The biggest feedback
 or complaint that users in Battlefield 4 have are of "netcode". What is this
@@ -44,7 +44,7 @@ that Player B's game decided that the hit was good but then the gaming logic
 or "netcode" when communicating with Player A's game and the server decided it
 wasn't good at all.
 
-# Why Does it Happen?
+## Why Does it Happen?
 
 There isn't any reason this should happen but I assume that the developers
 just messed up the logic. If Player B's shot didn't hit Player A then there
@@ -70,7 +70,7 @@ implemented.
 | Total                                     | 1 sec  |
 
 
-# My Thoughts
+## My Thoughts
 
 Now, obviously I bet that there are shortcuts being made that most communication
 is made with the server and the server has the "true" information. So we can
