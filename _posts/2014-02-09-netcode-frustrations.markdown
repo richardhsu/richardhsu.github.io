@@ -61,13 +61,13 @@ I've never designed a distributed gaming system so if you are reading this and
 have had experience, please enlighten me as I'm curious on what actually is
 implemented.
 
-| Action                                   | Delay  |
-| ---------------------------------------- |:------:|
-| B tells Server that he shot.             | 250 ms |
-| Server tells A that a shot was made.     | 250 ms |
-| A tells Server that the shot was no good.| 250 ms |
-| Server tells B that the shot was no good.| 250 ms |
-| Total                                    | 1 sec  |
+| Action                                    | Delay  |
+| :---------------------------------------- |:------:|
+| B tells Server that he shot.              | 250 ms |
+| Server tells A that a shot was made.      | 250 ms |
+| A tells Server that the shot was no good. | 250 ms |
+| Server tells B that the shot was no good. | 250 ms |
+| Total                                     | 1 sec  |
 
 
 # My Thoughts

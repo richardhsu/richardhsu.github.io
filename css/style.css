@@ -256,3 +256,11 @@ ul.pages li a:hover, ul.pages li a:active {
 #disqus_thread {
   margin-top: 20px;
 }
+
+table td {
+  border: 1px solid #bbbbbb;
+}
+
+table thead th {
+  border-bottom: 2px solid #bbbbbb;
+}
