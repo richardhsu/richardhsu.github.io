@@ -31,7 +31,7 @@ If you've been keeping along, you know I enjoy networking! The biggest feedback
 or complaint that users in Battlefield 4 have are of "netcode". What is this
 "netcode"? I had no idea what it was in the beginning. At first, I assumed it
 was just some premium code that users could get and get an advantage in the game
-because the statements I saw were things like "F*** netcode" or "Wow, you only
+because the statements I saw were things like "F--- netcode" or "Wow, you only
 killed me because of netcode". I later looked it up and all it means is the
 network programming code in the game that pretty much manages everything!
 
