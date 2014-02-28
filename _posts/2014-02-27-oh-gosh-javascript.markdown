@@ -11,6 +11,8 @@ language, it does make sense. Of course, I'm not justifying the language
 decisions, just that based on the design of the language, the outcomes make
 sense.
 
+<!--more-->
+
 Recently I ran into the issue of an event handler that didn't exist even though
 it was clearly defined! An example of the code would be as such:
 
