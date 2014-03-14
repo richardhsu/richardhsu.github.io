@@ -89,12 +89,12 @@ iframe:not([seamless]) {
   border: 0px;
 }
 
-table {
+.post table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-table td, table th {
+.post table td, .post table th {
   border: 1px solid #bbbbbb;
   padding: 5px;
 }
