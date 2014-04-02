@@ -10,4 +10,4 @@ thoughts and ideas but things always fell short; however, this time I've taken
 the time to use [Jekyll][jekyll] and create my own template! I'm excited to
 start blogging again. I hope you join me in my adventures!
 
-[jekyll]:    http://jekyllrb.com
+[jekyll]: http://jekyllrb.com
