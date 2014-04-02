@@ -22,25 +22,17 @@ some conflicts, but if you leave a comment with errors, I could possibly help!
 In general, these instructions work for Mavericks but should theoretically work
 for past versions as well now.
 
-## XCode Command Line Tools
-
-For the most part you don't need to download the command line tools `dmg` file
-but for more completeness you should go to the [Developer Website][apple] which
-requires an Apple ID to view (don't worry, you don't need a Developer account)
-and download the latest command line tools for your OS X version. Once you've
-downloaded it, open the `dmg` file and install the package.
-
 ## Command Line Tools in Terminal
 
-Next open up the terminal and run the following command (a pop-up will appear
+Open up the terminal and run the following command (a pop-up will appear
 which you should continue and install):
 
 ```bash
 sudo xcode-select --install
 ```
 
-This should actually be the one installing the command line tools or possibly
-updating them and is the necessary step to take.
+This will install the command line tools necessary to build and configure the
+RVM installation.
 
 ## Homebrew
 
@@ -97,6 +89,23 @@ rvm use 2.1.1 --default
 Now you can type `ruby -v` to see the version which should show 2.1.1. And now
 you have RVM installed on your system and you should be able to install
 different versions of Ruby and use them!
+
+## Notice
+
+If you don't have Mavericks, you may still be able to follow these steps but
+you might need to install the command line tools by downloading the `dmg` file
+from the [Developer Website][apple] which requires an Apple ID to view (don't
+worry, you don't need a Developer account). Download the latest command line
+tools for your OS X version. Once you've downloaded it, open the `dmg` file and
+install the package. Then continue from the top.
+
+At some point you may also need to specify the version of `gcc` to run such as:
+
+```bash
+rvm install 2.1.1 --with-gcc=gcc
+```
+
+Some other options you may need are `clang` or `gcc46`. Good luck!
 
 [apple]: https://developer.apple.com/downloads/index.action?name=command%20line%20tools
 [homebrew]: http://brew.sh/
