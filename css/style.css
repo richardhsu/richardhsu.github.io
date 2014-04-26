@@ -160,6 +160,7 @@ ul.pages li {
   margin: 0 5px 0 0;
   padding: 2px 6px;
   text-transform: uppercase;
+  border-radius: 3px;
 }
 
 ul.pages li a:link, ul.pages li a:visited {
