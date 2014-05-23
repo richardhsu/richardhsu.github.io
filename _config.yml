@@ -10,3 +10,5 @@ pygments: true
 
 redcarpet:
   extensions: [tables]
+
+exclude: ["Rakefile", "README.md"]
