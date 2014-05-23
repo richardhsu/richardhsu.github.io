@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <title>Oh Gosh Javascript</title>
+  <meta name="author" content="Richard Hsu">
+  <meta name="keywords" content="richard hsu, blog, ideas, thoughts" />
+  <meta name="description" content="Richard Hsu's blog about anything and everything." />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="google-site-verification" content="OmxMsLFmNXKOxX9hZRyFW9sZcita0lpB6lfqUuZQxZs" />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="http://www.richardhsu.me/css/syntax.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="http://www.richardhsu.me/css/style.css" type="text/css" media="screen, projection" />
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+</head>
+<body>
+<div id="header">
+  <div class="content-jar clearfix">
+    <div class="avatar left"><img src="http://www.richardhsu.me/images/profile.jpeg" height="100" width="100" /></div>
+    <div class="description">
+      <strong>Welcome to Richard Hsu's blog!</strong><br />
+      Here, I explore different subjects such as food, programming, tv shows, movies, and really anything
+      I find in life! I hope to share my journey and adventures with you! Thanks for visiting!
+    </div>
+    <ul class="pages">
+      <li><a href="http://www.richardhsu.me"><i class="fa fa-home"></i> Home</a></li>
+      <li><a href="http://www.richardhsu.me/search.html"><i class="fa fa-search"></i> Search Blog</a></li>
+    </ul>
+  </div>
+</div>
+<div id="container">
+  <div class="content-jar listing">
+    <!-- Beginning of Posts Listing -->
+    <div class="back-to-index"><a href="http://www.richardhsu.me">Back to Index</a></div>
+<div class="post">
+  <div class="post-header">
+    <h1><a href="/posts/2014/02/27/oh-gosh-javascript.html">Oh Gosh Javascript</a></h1>
+    <span class="post-date"><i class="fa fa-calendar"></i> February 27 2014</span>
+  </div>
+  <p>Javascript is a funny language. I rarely find myself going &quot;oh that makes sense&quot;
+, but then again when I think about all the rules and structures of the
+language, it does make sense. Of course, I&#39;m not justifying the language
+decisions, just that based on the design of the language, the outcomes make
+sense.</p>
+
+<!--more-->
+
+<p>Recently I ran into the issue of an event handler that didn&#39;t exist even though
+it was clearly defined! An example of the code would be as such:</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">div</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">element_id</span><span class="p">),</span>
+    <span class="nx">button</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">);</span>
+<span class="nx">button</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">&quot;Click Me&quot;</span><span class="p">;</span>
+<span class="nx">button</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="nx">div</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">div</span><span class="p">);</span>
+</code></pre></div>
+<p>This is all fine and dandy and the event handler exists, but if we do something
+afterward like:</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">div</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">+=</span> <span class="s2">&quot;&lt;p&gt;More text inside the div.&lt;/p&gt;&quot;</span><span class="p">;</span>
+</code></pre></div>
+<p>The event handler on the button disappears! This actually makes sense if you
+understand innerHTML. I actually didn&#39;t know about this and figured innerHTML
+just meant append the data, but I didn&#39;t think that it caused a reparsing of the
+elements on the page. In effect it is because the line becomes:</p>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">div</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">div</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">+</span> <span class="s2">&quot;&lt;p&gt;More text inside the div.&lt;/p&gt;&quot;</span><span class="p">;</span>
+</code></pre></div>
+<p>Therefore since the <code>onclick</code> event is defined in Javascript and doesn&#39;t carry
+over in the HTML then when a reparsing is done the event disappears. So sad.</p>
+
+<blockquote>
+<p>Oh the mysteries of Javascript, how I have much to learn.</p>
+</blockquote>
+
+
+  
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'richardhsu'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  
+</div>
+
+    <!-- /End Posts Listing -->
+    <center><a href="http://fontawesome.io">Font Awesome</a> by Dave Gandy</center>
+  </div>
+</div>
+</body>
+</html>
