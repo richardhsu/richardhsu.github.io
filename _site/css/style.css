@@ -14,7 +14,7 @@ body {
   padding: 0;
 }
 
-h1, h1 a:link, h1 a:visited, h1 a:hover, h1 a:active{
+h1, h1 a:link, h1 a:visited, h1 a:hover, h1 a:active {
   font-weight: normal;
 }
 
@@ -202,28 +202,6 @@ ul.pages li a:hover, ul.pages li a:active {
 .post-date {
   color: #555555;
   font-weight: bold;
-  text-transform: uppercase;
-}
-
-.post-footer a:link, .post-footer a:visited {
-  background: #aaccbb;
-  color: #005533;
-  display: inline-block;
-  font-weight: bold;
-  margin-top: 10px;
-  padding: 5px 10px;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.post-footer a:hover, .post-footer a:active {
-  background: #bbddcc;
-  color: #227755;
-  display: inline-block;
-  font-weight: bold;
-  margin-top: 10px;
-  padding: 5px 10px;
-  text-decoration: none;
   text-transform: uppercase;
 }
 
