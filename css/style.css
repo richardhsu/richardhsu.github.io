@@ -19,7 +19,7 @@ h1, h1 a:link, h1 a:visited, h1 a:hover, h1 a:active {
 }
 
 p {
-  margin: 10px 0;
+  margin: 5px 0;
   padding: 0;
 }
 
@@ -181,12 +181,13 @@ ul.pages li a:hover, ul.pages li a:active {
 }
 
 .post-header {
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 
 .post-header h1 {
-  margin: 0 0 5px 0;
+  margin: 10px 0;
   padding: 0;
+  font-weight: bold;
 }
 
 .post-header h1 a:link, .post-header h1 a:visited {
