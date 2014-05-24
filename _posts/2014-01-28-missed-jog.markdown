@@ -3,6 +3,7 @@ layout: post
 comments: true
 title: "Missed Jog"
 date: 2014-01-28 15:15:00
+tags: [Running]
 ---
 
 Well today was a failure. I missed a running day. It might be good since my

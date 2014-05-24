@@ -3,6 +3,7 @@ layout: post
 comments: true
 title: "Another Day Passes"
 date: 2014-04-25 12:40:00
+tags: [Running, Productive]
 ---
 
 Another day passes by and I forget to write. Or more than just forget, I do not

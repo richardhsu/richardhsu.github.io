@@ -3,6 +3,7 @@ layout: post
 comments: true
 title: "Kindle Reader on Mac OS X Bug"
 date: 2014-01-31 14:56:00
+tags: [Kindle, Mac, Tips]
 ---
 
 I use Kindle heavily for reference books and normal books across many devices

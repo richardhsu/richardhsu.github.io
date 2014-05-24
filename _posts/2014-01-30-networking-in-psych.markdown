@@ -3,6 +3,7 @@ layout: post
 comments: true
 title: "Networking in Psych"
 date: 2014-01-30 12:17:00
+tags: [Psych, Television]
 ---
 
 I've been rewatching [Psych][psych] on Netflix as my way to relieve stress from

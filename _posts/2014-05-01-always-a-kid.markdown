@@ -3,6 +3,7 @@ layout: post
 comments: true
 title: "Always a Kid"
 date: 2014-05-01 00:42:00
+tags: [Life]
 ---
 
 "Are you ready kids? Aye, aye, captain!" ... these words echo through my room

@@ -3,6 +3,7 @@ layout: post
 comments: true
 title: "Oh Gosh Javascript"
 date: 2014-02-27 19:35:00
+tags: [Javascript, Tips, Programming]
 ---
 
 Javascript is a funny language. I rarely find myself going "oh that makes sense"

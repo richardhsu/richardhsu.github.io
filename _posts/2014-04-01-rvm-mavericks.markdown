@@ -3,6 +3,7 @@ layout: post
 comments: true
 title: "RVM on OS X Mavericks"
 date: 2014-04-01 17:03:00
+tags: [RVM, Ruby, Mavericks, Tutorial]
 ---
 
 Ruby Version Manager (RVM) and OS X Mavericks can be painful. Though if you use

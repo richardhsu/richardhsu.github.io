@@ -3,6 +3,7 @@ layout: post
 comments: true
 title: "Let It Go Multi-Language"
 date: 2014-01-23 08:00:00
+tags: [Movie, Music, Frozen]
 ---
 
 Frozen was such a nice movie! I love the animation style for it, very much

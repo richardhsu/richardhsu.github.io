@@ -3,6 +3,7 @@ layout: post
 comments: true
 title: "Almost There"
 date: 2014-05-11 16:03:00
+tags: [Running]
 ---
 
 Beginning of this year my friends and I tried to run on a regular basis.

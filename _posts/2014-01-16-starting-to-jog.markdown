@@ -3,6 +3,7 @@ layout: post
 comments: true
 title: "Starting to Jog"
 date: 2014-01-16 09:00:00
+tags: [Running]
 ---
 
 One of my friends proposed we jog in the mornings on Tuesdays and Thursdays. I,

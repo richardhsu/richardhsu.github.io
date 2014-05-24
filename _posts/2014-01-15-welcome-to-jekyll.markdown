@@ -3,6 +3,7 @@ layout: post
 comments: true
 title: "Welcome to Jekyll!"
 date: 2014-01-15 17:25:00
+tags: [Jekyll]
 ---
 
 I'm going to start blogging properly now! I really wanted to have a blog with

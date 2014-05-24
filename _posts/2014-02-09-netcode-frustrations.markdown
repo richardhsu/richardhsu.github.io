@@ -3,6 +3,7 @@ layout: post
 comments: true
 title: "Netcode"
 date: 2014-02-09 15:09:00
+tags: [Gaming, BF4, Networking]
 ---
 
 Things have gotten a lot busier in school. Longer grading periods, more reading,
