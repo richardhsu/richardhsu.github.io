@@ -34,6 +34,7 @@ module Jekyll
       self.process(@name)
       self.read_yaml(File.join(base, '_layouts'), "tag_index.html")
       self.data['tag'] = val
+      self.data['title'] = "Tag: #{val}"
     end
   end
 
