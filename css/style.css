@@ -145,14 +145,14 @@ iframe:not([seamless]) {
   width: 100px;
 }
 
-ul.pages {
+ul.pages, ul.tag-cloud {
   list-style-type: none;
   margin: 3px 0 0 0;
   padding: 0;
   overflow: hidden;
 }
 
-ul.pages li {
+ul.pages li, ul.tag-cloud li {
   background: #007755;
   float: left;
   font-size: 12px;
@@ -163,6 +163,10 @@ ul.pages li {
   border-radius: 3px;
 }
 
+ul.tag-cloud li {
+  background: #eeeeee;
+}
+
 ul.pages li a:link, ul.pages li a:visited {
   color: #ffffff;
   text-decoration: none;
@@ -170,6 +174,12 @@ ul.pages li a:link, ul.pages li a:visited {
 
 ul.pages li a:hover, ul.pages li a:active {
   border-bottom: 1px dotted #ffffff;
+}
+
+ul.tag-cloud li {
+  color: #000000;
+  font-weight: normal;
+  margin: 5px;
 }
 
 .listing {

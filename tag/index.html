@@ -1,0 +1,21 @@
+---
+layout: default
+title: Tags
+---
+
+<div class="tag-header">
+  <p><strong>Tag Cloud</strong></p>
+</div>
+
+{% capture site_tags %}{% for tag in site.tags %}{{ tag[0] }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+{% assign tags = site_tags | split:',' | sort %}
+
+<ul class="tag-cloud">
+{% for item in (0..site.tags.size) %}{% unless forloop.last %}
+  {% capture tag %}{{ tags[item] | strip_newlines }}{% endcapture %}
+  <li><i class="fa fa-tag"></i> &nbsp; <a href="/tag/{{ tag | replace: ' ','-' | downcase }}">{{ tag }}</a> ({{ site.tags[tag].size }})</li>
+{% endunless %}
+{% endfor %}
+</ul>
+<br />
+<div class="clearfix"></div>
