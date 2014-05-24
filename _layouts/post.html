@@ -6,14 +6,11 @@ layout: default
   <div class="post-header">
     <h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
     <span class="post-date"><i class="fa fa-calendar"></i> {{ page.date | date: "%B %-d %Y" }}</span>
-  </div>
-  {{ content }}
-
-  <div class="post-footer">
     <span class="post-tags"><i class="fa fa-tag"></i>
       {% for tag in page.tags %}<a href="/tag/{{ tag | replace:' ','-' | downcase }}" rel="tag">{{ tag }}</a>{% if forloop.last == false %}, {% endif %}{% endfor %}
     </span>
   </div>
+  {{ content }}
 
   {% if page.comments %}
     <div id="disqus_thread"></div>
