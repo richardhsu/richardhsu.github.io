@@ -28,7 +28,7 @@ for past versions as well now.
 Open up the terminal and run the following command (a pop-up will appear
 which you should continue and install):
 
-```bash
+```
 sudo xcode-select --install
 ```
 
@@ -56,7 +56,7 @@ which homebrew will try to help with advice.
 Install RVM using the following command (you can also install it by following
 the instructions on the website at [rvm.io][rvm]):
 
-```bash
+```
 \curl -sSL https://get.rvm.io | bash -s stable --auto-dotfiles
 ```
 
@@ -76,7 +76,7 @@ the settings take affect and you can now use RVM.
 Now you're ready to install the Ruby version you'd like! For example if you want
 version 2.1.1 then we can do the following in the terminal:
 
-```bash
+```
 rvm install 2.1.1 --with-gcc=gcc
 ```
 
@@ -84,7 +84,7 @@ You should have GCC default installed on Mavericks so this should work and avoid
 trying to install GCC 4.6 through homebrew. Then you can set the Ruby version to
 the default one by doing the following command in the terminal:
 
-```bash
+```
 rvm use 2.1.1 --default
 ```
 
@@ -103,7 +103,7 @@ install the package. Then continue from the top.
 
 At some point you may also need to specify the version of `gcc` to run such as:
 
-```bash
+```
 rvm install 2.1.1 --with-gcc=gcc
 ```
 

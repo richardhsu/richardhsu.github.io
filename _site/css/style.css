@@ -202,6 +202,7 @@ ul.pages li a:hover, ul.pages li a:active {
 .post-date {
   color: #555555;
   font-weight: bold;
+  margin-right: 10px;
   text-transform: uppercase;
 }
 
