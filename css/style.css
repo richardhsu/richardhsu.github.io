@@ -176,6 +176,15 @@ ul.pages li a:hover, ul.pages li a:active {
   padding: 30px;
 }
 
+.tag-header {
+  background-color: #eeeeee;
+  border-radius: 3px;
+  font-size: 18px;
+  margin: 0 0 20px 0;
+  padding: 5px 10px;
+  text-align: right;
+}
+
 .post {
   margin-bottom: 40px;
 }
