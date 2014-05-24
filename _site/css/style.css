@@ -200,7 +200,7 @@ ul.tag-cloud li {
 }
 
 .single-post p {
-  margin: 10px 0;
+  margin: 15px 0;
 }
 
 .post-header {
@@ -233,6 +233,10 @@ ul.tag-cloud li {
 #post-navigation {
   margin: 40px 0 10px 0;
   text-transform: uppercase;
+}
+
+.single-post #post-navigation {
+  margin: 0 0 10px 0;
 }
 
 #post-navigation .center:before,
@@ -272,5 +276,5 @@ ul.tag-cloud li {
 
 /* DISQUS */
 #disqus_thread {
-  margin-top: 20px;
+  margin-top: 10px;
 }
