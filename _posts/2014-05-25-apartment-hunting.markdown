@@ -41,6 +41,20 @@ places. We generally looked for the following issues:
 * Smells.
 * Rent hikes each year at end of lease.
 
+## Pictures, Pictures, Pictures
+
+Take A LOT of pictures! I mean A LOT of pictures. Like really, don't skip out
+on this. Do this for yourself. Take a picture of the kitchen in different
+angles, take a picture of the rooms with people in it. Take a picture of the
+bathroom, the cabinets, the shower, the drains, etc. Take EVERY picture that
+you need!
+
+Why? Because you are going to start to blend all the apartments together after
+seeing different ones! Make sure you can reference back to remember what you
+saw. Between my girlfriend and me we had maybe 10-20 pictures per apartment
+and even then we still missed small details. I mean it! The small details are
+the ones you'll want to remember when comparing apartments!
+
 ## Warning
 
 We were extremely careful about wording of things. Be sure you clarify what you
