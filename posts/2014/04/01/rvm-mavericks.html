@@ -62,7 +62,7 @@ for past versions as well now.</p>
 
 <p>Open up the terminal and run the following command (a pop-up will appear
 which you should continue and install):</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">sudo xcode-select --install
+<div class="highlight"><pre><code class="language-text" data-lang="text">sudo xcode-select --install
 </code></pre></div>
 <p>This will install the command line tools necessary to build and configure the
 RVM installation.</p>
@@ -74,7 +74,7 @@ utilizes homebrew to install dependencies and we will install it first before
 RVM. The RVM installation will sometimes fail without homebrew first
 installed. You should run the following command (or view the homebrew website
 for the most up to date installation command):</p>
-<div class="highlight"><pre><code class="bash language-bash" data-lang="bash">ruby -e <span class="s2">&quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)&quot;</span>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">ruby -e <span class="s2">&quot;$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)&quot;</span>
 </code></pre></div>
 <p>Next, after finishing, you should run <code>brew doctor</code> to verify everything is
 good with your system, if there are any errors, attempt to remedy the situations
@@ -84,7 +84,7 @@ which homebrew will try to help with advice.</p>
 
 <p>Install RVM using the following command (you can also install it by following
 the instructions on the website at <a href="http://rvm.io/rvm/install">rvm.io</a>):</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">\curl -sSL https://get.rvm.io | bash -s stable --auto-dotfiles
+<div class="highlight"><pre><code class="language-text" data-lang="text">\curl -sSL https://get.rvm.io | bash -s stable --auto-dotfiles
 </code></pre></div>
 <p>This step can take a few minutes as it needs to install dependencies as well
 using homebrew. I&#39;ve seen it range between 5-30 minutes but luckily it shows a
@@ -101,12 +101,12 @@ the settings take affect and you can now use RVM.</p>
 
 <p>Now you&#39;re ready to install the Ruby version you&#39;d like! For example if you want
 version 2.1.1 then we can do the following in the terminal:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">rvm install 2.1.1 --with-gcc=gcc
+<div class="highlight"><pre><code class="language-text" data-lang="text">rvm install 2.1.1 --with-gcc=gcc
 </code></pre></div>
 <p>You should have GCC default installed on Mavericks so this should work and avoid
 trying to install GCC 4.6 through homebrew. Then you can set the Ruby version to
 the default one by doing the following command in the terminal:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">rvm use 2.1.1 --default
+<div class="highlight"><pre><code class="language-text" data-lang="text">rvm use 2.1.1 --default
 </code></pre></div>
 <p>Now you can type <code>ruby -v</code> to see the version which should show 2.1.1. And now
 you have RVM installed on your system and you should be able to install
@@ -122,7 +122,7 @@ tools for your OS X version. Once you&#39;ve downloaded it, open the <code>dmg</
 install the package. Then continue from the top.</p>
 
 <p>At some point you may also need to specify the version of <code>gcc</code> to run such as:</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">rvm install 2.1.1 --with-gcc=gcc
+<div class="highlight"><pre><code class="language-text" data-lang="text">rvm install 2.1.1 --with-gcc=gcc
 </code></pre></div>
 <p>Some other options you may need are <code>clang</code> or <code>gcc46</code>. Good luck!</p>
 
