@@ -31,6 +31,13 @@ task :deploy do
   puts status ? "Success" : "Failed"
 end
 
-desc "Commit and deploy _site/"
-task :commit_deploy => [:commit, :deploy] do
+desc "Build _site/"
+task :build do
+  puts "\n## Building"
+  status = system("jekyll build")
+  puts status ? "Success" : "Failed"
+end
+
+desc "Build, commit, and deploy _site/"
+task :publish => [:build, :commit, :deploy] do
 end
