@@ -44,9 +44,9 @@
   </div>
   <p>Javascript is a funny language. I rarely find myself going &quot;oh that makes sense&quot;
 , but then again when I think about all the rules and structures of the
-language, it does make sense. Of course, I&#39;m not justifying the language
-decisions, just that based on the design of the language, the outcomes make
-sense.</p>
+language, it does make sense in that context ... Of course, I&#39;m not justifying
+the language decisions, just that based on the design of the language, the
+outcomes make sense.</p>
 
 <!--more-->
 
@@ -65,17 +65,21 @@ afterward like:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">div</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">+=</span> <span class="s2">&quot;&lt;p&gt;More text inside the div.&lt;/p&gt;&quot;</span><span class="p">;</span>
 </code></pre></div>
 <p>The event handler on the button disappears! This actually makes sense if you
-understand innerHTML. I actually didn&#39;t know about this and figured innerHTML
-just meant append the data, but I didn&#39;t think that it caused a reparsing of the
-elements on the page. In effect it is because the line becomes:</p>
+understand <code>innerHTML</code>. I actually didn&#39;t know about this and figured
+<code>innerHTML</code> was the structure and you could easily modify with appending, but
+I didn&#39;t think that it caused a reparsing of the elements on the page. In effect
+it is because the line becomes:</p>
 <div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">div</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">div</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">+</span> <span class="s2">&quot;&lt;p&gt;More text inside the div.&lt;/p&gt;&quot;</span><span class="p">;</span>
 </code></pre></div>
 <p>Therefore since the <code>onclick</code> event is defined in Javascript and doesn&#39;t carry
-over in the HTML then when a reparsing is done the event disappears. So sad.</p>
+over in the HTML then when a reparsing is done the event disappears.</p>
 
 <blockquote>
 <p>Oh the mysteries of Javascript, how I have much to learn.</p>
 </blockquote>
+
+<p>I felt, really stupid afterward, but hopefully now you know, or you just think
+I&#39;m stupid too. Oh well, as long as I&#39;m learning everyday!</p>
 
   <!-- Page Navigation -->
   <div id="post-navigation">
