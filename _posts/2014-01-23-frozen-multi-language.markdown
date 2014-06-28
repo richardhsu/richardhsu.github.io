@@ -17,7 +17,7 @@ enjoyed it:
   <iframe width="560" height="315" src="http://www.youtube.com/embed/OC83NA5tAGE?color=white&theme=light" frameborder="0"> </iframe>
 </div>
 
-Isn't that nice?! At first I actually didn't enjoy this song but it grew on me
+Isn't that nice?! At first I actually didn't enjoy this song, but it grew on me
 especially considering how catchy it can be! Plus Idina Menzel performing the
 original is absolutely amazing! I've seen other covers but she definitely pulls
 off the song so beautifully and her range is ridiculous as always! Let me know

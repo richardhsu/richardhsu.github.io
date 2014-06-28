@@ -38,7 +38,7 @@ drop in words:
 
 First off, I just love the execution of Shawn's response. I always enjoyed the
 witty stupid banter but seriously, it's not just the line, but the execution
-that really impresses me.
+that really impressed me.
 
 Anyways, getting down to the point the manager states **"802.1Q spanning tree
 loop using auto forwarding non-Wintel based equipment?"** to which I didn't
@@ -63,9 +63,9 @@ but it isn't anything interesting as I assume it's just a setting or
 configuration.
 
 In conclusion, I really enjoyed this episode! It had some interesting twists
-and didn't make it at all obvious who was the crook but it dropped hints enough
-that in the end the pieces connect. If you haven't watched Psych, I highly
-suggest it! I've now placed it at the top of my all time favorite TV shows for
+and didn't make it at all obvious who was the crook, but it dropped hints enough
+that in the end, the pieces connect. If you haven't watched Psych, I highly
+recommend it! I've now placed it at the top of my all time favorite TV shows for
 the many reasons of crime investigation, curiosity, comedy, obscure references
 that I may never get, and execution.
 

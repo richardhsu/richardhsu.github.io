@@ -51,7 +51,7 @@ of me and continue to tell me that I can do it! Also at the same time, I feel
 extremely bad for lagging behind them so I at least keep trying to push forward.
 Especially at intersections, I don't want cars to have to wait twice: once for
 my friends to cross and once for my lagging butt. So I'm eternally thankful that
-they are able to run with me! My girlfriend motivates me through a ton of love
+they are able to run with me! My girlfriend motivates me through a ton of love,
 but I hope eventually she'll be right there next to me when I'm running, tehehe!
 
 Anyways 3 miles of 5 miles. 2 more to go. Let's do this!

@@ -16,3 +16,7 @@ time. All you have to do is go to `Kindle > Preferences` and then **Deregister**
 your account and re-register! Now all your books should appear in your library
 for you to download! I've had to do this a couple of times which is annoying but
 at least it works! Hope they fix this issue!
+
+**Edit (June 27, 2014):** Apparently, this happens on the Windows version too.
+You'll need to deregister as well and re-register to get all the books to appear
+again. Quite disappointing.

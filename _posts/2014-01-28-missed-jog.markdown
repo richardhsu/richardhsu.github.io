@@ -14,18 +14,18 @@ running.
 It was funny though, I had dreams of running in the morning. At least part of me
 was wanting to do it. Dreams are interesting, aren't they? I remember clearly
 in my dream getting out of bed and then running around the neighborhood.
-Unfortunately it was easy to tell it was a dream because I didn't eat a quick
-breakfast nor did I brush my teeth which I always do in the morning. The crazy
-part was this dream happened 3 different times with 3 different scenarios, all
-very realistic.
+Unfortunately it was easy to tell that it was a dream because I didn't eat a
+quick breakfast nor did I brush my teeth which I always do in the morning.
+The crazy part was this dream happened 3 different times with 3 different
+scenarios, all very realistic.
 
 <!--more-->
 
 Remember the following were dreams:
 
 * The first run was great, felt normal and a cool brisk air in the neighborhood.
-* The second run was interesting. It started raining but my motivation was off
-the charts that I remember clearly thinking "Whatever, it's just rain." and
+* The second run was interesting. It started raining, but my motivation was off
+the charts and I remember clearly thinking "Whatever, it's just rain." and
 pushing forward. The only odd part was that there was a lot of school bus
 traffic which I don't normally see.
 * The third run was almost normal. It started off the same as the first run

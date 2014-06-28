@@ -35,18 +35,18 @@ I could take a shower and not need to dry off!
 
 ## The Shower Head
 
-The reason I put this second is because my real first problem was that I
+The reason I put this second is that my first real problem was that I
 needed a wrench to take off the shower head! I didn't even realize it that
 the old shower head couldn't be twited off nicely without tools. So not only
 did I make 2 trips to get the toolbox and then the actual wrench. I actually
 had 3 trips as the first one was to get the new shower head! Now that wasn't
 my only problem ...
 
-I am ridiculously stupid. I did't think through my purchases. I double check
-that the product looked good but I never thought about the use case! I bought
-a shower head but it was a cheap one because I figured that I didn't need the
-fancy 8 mode massage shower heads with lights and sounds (just kidding on
-the lights and sounds). Apparently, it doesn't have any joint to adjust the
+I am ridiculously stupid. I didn't think through my purchases. I double
+checked that the product looked good but I never thought about the use case!
+I bought a shower head but it was a cheap one because I figured that I didn't
+need the fancy 8 mode massage shower heads with lights and sounds (just kidding
+on the lights and sounds). Apparently, it doesn't have any joint to adjust the
 angle to which the shower head points. Thus it was angled as the pipe and
 with my height and the shower being a standard shower room (not a bathtub),
 I found that it only hit from my chest and up.
