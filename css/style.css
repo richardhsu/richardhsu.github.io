@@ -325,3 +325,19 @@ ul.tag-cloud li {
 #disqus_thread {
   margin-top: 10px;
 }
+
+/* Google */
+input.gsc-input, .gs-snippet {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  padding: 4px 8px;
+}
+
+.gs-snippet {
+  padding: 4px 8px;
+}
+
+.gsc-results {
+  text-decoration: none;
+}
