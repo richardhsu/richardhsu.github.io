@@ -49,5 +49,5 @@ over in the HTML then when a reparsing is done the event disappears.
 
 > Oh the mysteries of Javascript, how I have much to learn.
 
-I felt, really stupid afterward, but hopefully now you know, or you just think
+I felt really stupid afterward, but hopefully now you know or you just think
 I'm stupid too. Oh well, as long as I'm learning everyday!
