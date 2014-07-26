@@ -52,7 +52,7 @@ outcomes make sense.</p>
 
 <p>Recently I ran into the issue of an event handler that didn&#39;t exist even though
 it was clearly defined! An example of the code would be as such:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">div</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">element_id</span><span class="p">),</span>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">div</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">element_id</span><span class="p">),</span>
     <span class="nx">button</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">);</span>
 <span class="nx">button</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="s2">&quot;Click Me&quot;</span><span class="p">;</span>
 <span class="nx">button</span><span class="p">.</span><span class="nx">onclick</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
@@ -62,14 +62,14 @@ it was clearly defined! An example of the code would be as such:</p>
 </code></pre></div>
 <p>This is all fine and dandy and the event handler exists, but if we do something
 afterward like:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">div</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">+=</span> <span class="s2">&quot;&lt;p&gt;More text inside the div.&lt;/p&gt;&quot;</span><span class="p">;</span>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">div</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">+=</span> <span class="s2">&quot;&lt;p&gt;More text inside the div.&lt;/p&gt;&quot;</span><span class="p">;</span>
 </code></pre></div>
 <p>The event handler on the button disappears! This actually makes sense if you
 understand <code>innerHTML</code>. I actually didn&#39;t know about this and figured
 <code>innerHTML</code> was the structure and you could easily modify with appending, but
 I didn&#39;t think that it caused a reparsing of the elements on the page. In effect
 it is because the line becomes:</p>
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">div</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">div</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">+</span> <span class="s2">&quot;&lt;p&gt;More text inside the div.&lt;/p&gt;&quot;</span><span class="p">;</span>
+<div class="highlight"><pre><code class="javascript language-javascript" data-lang="javascript"><span class="nx">div</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">div</span><span class="p">.</span><span class="nx">innerHTML</span> <span class="o">+</span> <span class="s2">&quot;&lt;p&gt;More text inside the div.&lt;/p&gt;&quot;</span><span class="p">;</span>
 </code></pre></div>
 <p>Therefore since the <code>onclick</code> event is defined in Javascript and doesn&#39;t carry
 over in the HTML then when a reparsing is done the event disappears.</p>
