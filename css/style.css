@@ -201,7 +201,7 @@ ul.tag-cloud li {
 }
 
 @media all and (min-width: 400px) {
-  .tag-cloud-container {
+  .tag-cloud {
     column-count: 2;
     column-gap: 5px;
     -moz-column-count: 2;
@@ -212,7 +212,7 @@ ul.tag-cloud li {
 }
 
 @media all and (min-width: 600px) {
-  .tag-cloud-container {
+  .tag-cloud {
     column-count: 3;
     column-gap: 5px;
     -moz-column-count: 3;
@@ -223,7 +223,7 @@ ul.tag-cloud li {
 }
 
 @media all and (min-width: 900px) {
-  .tag-cloud-container {
+  .tag-cloud {
     column-count: 5;
     column-gap: 5px;
     -moz-column-count: 5;
