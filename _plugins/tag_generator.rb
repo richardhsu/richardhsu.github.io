@@ -9,9 +9,9 @@ module Jekyll
       site.tags.each do |tag|
         tag[1] = tag[1].sort_by { |post| -post.date.to_f }
         # Calculate pages and generate
-        pages = Pager.calculate_pages(tag[1], site.config["paginate"].to_i)
+        pages = Jekyll::Paginate::Pager.calculate_pages(tag[1], site.config["paginate"].to_i)
         (1..pages).each do |num_page|
-          pager = Pager.new(site, num_page, tag[1], pages)
+          pager = Jekyll::Paginate::Pager.new(site, num_page, tag[1], pages)
           path = "/tag/#{tag[0]}".downcase.strip.gsub(' ', '-')
           if num_page > 1
             path = path + "/page#{num_page}"
