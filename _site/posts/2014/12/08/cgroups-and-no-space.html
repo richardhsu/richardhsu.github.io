@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <title>CGroups and No Space</title>
+  <meta name="author" content="Richard Hsu">
+  <meta name="keywords" content="richard hsu, blog, ideas, thoughts, performance" />
+  <meta name="description" content="Richard Hsu's blog about anything and performance!" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="google-site-verification" content="OmxMsLFmNXKOxX9hZRyFW9sZcita0lpB6lfqUuZQxZs" />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="http://www.richardhsu.me/css/syntax.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="http://www.richardhsu.me/css/style.css" type="text/css" media="screen, projection" />
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link rel="shortcut icon" href="http://www.richardhsu.me/images/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+<div id="header">
+  <div class="content-jar clearfix">
+    <div class="avatar left"><img src="http://www.richardhsu.me/images/profile.jpeg" height="100" width="100" /></div>
+    <div class="description">
+      <strong>Welcome to the Adventures with Richard Hsu!</strong><br />
+      Here, I explore different subjects such as performance engineering, food, tv shows, movies, and
+      really anything else that interests me! I hope to share my journey and adventures with you! Thanks
+      for visiting!
+    </div>
+    <ul class="pages">
+      <li><a href="http://www.richardhsu.me/"><i class="fa fa-home"></i> Home</a></li>
+      <li><a href="http://www.richardhsu.me/tag/"><i class="fa fa-tag"></i> Tags</a></li>
+      <li><a href="http://www.richardhsu.me/search/"><i class="fa fa-search"></i> Search Blog</a></li>
+    </ul>
+  </div>
+</div>
+<div id="container">
+  <div class="content-jar listing">
+    <!-- Beginning of Posts Listing -->
+    <div class="back-to-index"><a href="http://www.richardhsu.me">Back to Index</a></div>
+<div class="post single-post">
+  <div class="post-header">
+    <h1><a href="/posts/2014/12/08/cgroups-and-no-space.html">CGroups and No Space</a></h1>
+    <span class="post-date"><i class="fa fa-calendar"></i> December 8, 2014</span>
+    <span class="post-tags"><i class="fa fa-tag"></i>
+      <a href="/tag/tips" rel="tag">Tips</a>, <a href="/tag/linux" rel="tag">Linux</a>, <a href="/tag/troubleshoot" rel="tag">Troubleshoot</a>
+    </span>
+  </div>
+  <p>I&#39;ve been working with <a href="https://www.kernel.org/doc/Documentation/cgroups/cgroups.txt">Control Groups</a> recently to investigate a performance issue. I have not found a
+solution yet but will post again if that does happen! As for CGroups, I came across an issue that although simple
+if I just read the documentation, didn&#39;t seem obvious by the error:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>Errno 28<span class="o">]</span> No space left on device
+</code></pre></div>
+<!--more-->
+
+<h2>Solution</h2>
+
+<p>So other example errors could be as follows which all boil down to &quot;No space left on device&quot; and just depends on how
+you were creating the CGroups:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>Errno 28<span class="o">]</span> No space left on device
+bash: <span class="nb">echo</span>: write error: No space left on device
+Error changing group of pid 1234: No space left on device
+</code></pre></div>
+<p>This seemed really odd because I was pretty sure I didn&#39;t consume all my space on the system. Looking at the system
+the following was there:</p>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>df -h
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/md0              9.9G  1.6G  7.8G  18% /
+/dev/md1              9.9G  1.2G  8.2G  13% /var
+/dev/md3              882G   96G  742G  12% /export
+tmpfs                 512M  144K  512M   1% /tmp
+</code></pre></div>
+<p>There&#39;s clearly space everywhere! But what I didn&#39;t realize was that I didn&#39;t initialize CGroups correctly. The dumb
+me did not read the big bold starred section in the <a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Resource_Management_Guide/sec-cpuset.html">documentation</a> for <code>cpuset</code> under <strong>Mandatory parameters</strong>
+which state:</p>
+
+<blockquote>
+<p>Some subsystems have mandatory parameters that must be set before you can move a task into a cgroup which uses
+any of those subsystems. For example, before you move a task into a cgroup which uses the <code>cpuset</code> subsystem,
+the <code>cpuset.cpus</code> and <code>cpuset.mems</code> parameters must be defined for that cgroup.</p>
+</blockquote>
+
+<p>Here is how my CGroup was defined (this is a general format, please read documentation on how to actually change
+things if you are interested in using CGroups):</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">group main_process {
+   cpuset {
+      cpuset.cpus = 0-6;
+   }
+}
+</code></pre></div>
+<p>Upon trying to add the process to the CGroup, I encountered the &quot;No space left on device&quot; error. Notice how I didn&#39;t
+follow directions? That&#39;s okay, at least I went back to read the documentation afterward so I think I redeemed
+myself for a bit. All I had to do was make sure to define <code>cpuset.mems</code> and the error would disappear! Apparently
+this incorrect initialization causes the CGroup mount to not work correctly! The new modified CGroup definition
+should be as follows:</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">group main_process {
+   cpuset {
+      cpuset.cpus = 0-6;
+      cpuset.mems = 0;
+   }
+}
+</code></pre></div>
+<p>Now everything worked correctly, I could add my process to the CGroup and continue on with my work! I&#39;m not exactly
+sure why this error occurs but I suspect that it has to do with the fact that control groups must be mounted in
+order to interact and define them. This mounting makes the portion of CGroups data as if it were a separate
+filesystem and without properly initializing it, it seems to cause errors when trying to interact with it.</p>
+
+<p>If you have had experience with CGroups or know more, please enlighten as I am curious. I will try to dig up what
+I can to learn more and post if I find anything but I can&#39;t promise anything as the Linux world is so complex.</p>
+
+  <!-- Page Navigation -->
+  <div id="post-navigation">
+    <div class="left">
+      
+        <a href="http://www.richardhsu.me/posts/2014/11/18/slow-and-steady.html">Slow and Steady</a>
+      
+    </div>
+    <div class="right">
+      
+    </div>
+  </div>
+
+  
+  <br />
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = 'richardhsu'; // required: replace example with your forum shortname
+
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  
+</div>
+
+    <!-- /End Posts Listing -->
+    <center><a href="http://fontawesome.io">Font Awesome</a> by Dave Gandy</center>
+  </div>
+</div>
+<!-- Tracking Code -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51347261-1', 'richardhsu.me');
+  ga('send', 'pageview');
+</script>
+<!-- /Tracking Code -->
+</body>
+</html>
