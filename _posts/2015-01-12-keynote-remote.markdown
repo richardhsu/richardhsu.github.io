@@ -68,13 +68,13 @@ On your iOS device you'll now need to join the network that you just created. Go
 and scroll down to the "Devices" section where you should see "keynote-wifi" or whatever name you used for the network
 that you created in Step 1.
 
-<center><img src="{{ site.url }}/images/keynote-remote/04-ios-wifi.png" /></center>
+<center><img src="{{ site.url }}/images/keynote-remote/04-ios-wifi.png" class="ios-vertical" /></center>
 
 It'll ask if you want to join the network even though it doesn't have access to the Internet. This is completely fine!
 We just need the iOS device to be connected to your Mac (no Internet required). So hit "Join Anyway". If you have
 Internet shared then that is completely fine and you'll see that you need to enter the password.
 
-<center><img src="{{ site.url }}/images/keynote-remote/05-ios-join.png" /></center>
+<center><img src="{{ site.url }}/images/keynote-remote/05-ios-join.png" class="ios-vertical" /></center>
 
 ### Step 3: Start iOS Keynote
 
@@ -102,7 +102,7 @@ it using the checkbox next to "Enable" and wait for your iOS device name to appe
 A passcode should appear on both your Mac OS X machine and your iOS device as in the images below. Confirm the code
 and hit "Confirm" on the Mac OS X machine.
 
-<center><img src="{{ site.url }}/images/keynote-remote/11-passcode.png" /></center>
+<center><img src="{{ site.url }}/images/keynote-remote/11-mac-passcode.png" /></center>
 <center><img src="{{ site.url }}/images/keynote-remote/12-ios-passcode.png" /></center>
 
 ### Step 5: Play the Presentation
