@@ -120,6 +120,10 @@ img {
   max-width: 800px;
 }
 
+.ios-vertical {
+  max-height: 500px;
+}
+
 /* Custom Layout Elements */
 #header {
   background: #009977;
