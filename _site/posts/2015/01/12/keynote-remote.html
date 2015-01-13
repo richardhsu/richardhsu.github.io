@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <title>Keynote Remote with Mac OS X</title>
+  <meta name="author" content="Richard Hsu">
+  <meta name="keywords" content="richard hsu, blog, ideas, thoughts, performance" />
+  <meta name="description" content="Richard Hsu's blog about anything and performance!" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="google-site-verification" content="OmxMsLFmNXKOxX9hZRyFW9sZcita0lpB6lfqUuZQxZs" />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="http://www.richardhsu.me/css/syntax.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="http://www.richardhsu.me/css/style.css" type="text/css" media="screen, projection" />
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link rel="shortcut icon" href="http://www.richardhsu.me/images/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+<div id="header">
+  <div class="content-jar clearfix">
+    <div class="avatar left"><img src="http://www.richardhsu.me/images/profile.jpeg" height="100" width="100" /></div>
+    <div class="description">
+      <strong>Welcome to the Adventures with Richard Hsu!</strong><br />
+      Here, I explore different subjects such as performance engineering, food, tv shows, movies, and
+      really anything else that interests me! I hope to share my journey and adventures with you! Thanks
+      for visiting!
+    </div>
+    <ul class="pages">
+      <li><a href="http://www.richardhsu.me/"><i class="fa fa-home"></i> Home</a></li>
+      <li><a href="http://www.richardhsu.me/tag/"><i class="fa fa-tag"></i> Tags</a></li>
+      <li><a href="http://www.richardhsu.me/search/"><i class="fa fa-search"></i> Search Blog</a></li>
+    </ul>
+  </div>
+</div>
+<div id="container">
+  <div class="content-jar listing">
+    <!-- Beginning of Posts Listing -->
+    <div class="back-to-index"><a href="http://www.richardhsu.me">Back to Index</a></div>
+<div class="post single-post">
+  <div class="post-header">
+    <h1><a href="/posts/2015/01/12/keynote-remote.html">Keynote Remote with Mac OS X</a></h1>
+    <span class="post-date"><i class="fa fa-calendar"></i> January 12, 2015</span>
+    <span class="post-tags"><i class="fa fa-tag"></i>
+      <a href="/tag/tutorial" rel="tag">Tutorial</a>, <a href="/tag/mac" rel="tag">Mac</a>, <a href="/tag/ios" rel="tag">iOS</a>
+    </span>
+  </div>
+  <p>I&#39;ve always liked the idea of using my iPhone as a remote control for PowerPoint presentations but have never found
+a good iOS application to do the trick. However, since I use a MacBook Pro as my work computer which now comes with
+Keynote, I&#39;ve found that Keynote Remote works wonders! The iOS Keynote Remote isn&#39;t a separate application anymore
+though, it is now built into the iOS Keynote application. This tutorial will show you how to pair an iOS Keynote
+with your Mac OS X Keynote even without Internet access or when the WiFi network won&#39;t allow the pair to occur.</p>
+
+<!--more-->
+
+<h2>Requirements</h2>
+
+<ul>
+<li>A Mac OS X computer with Keynote 6.1 or later.</li>
+<li>An iOS device with Keynote 2.1 or later.</li>
+</ul>
+
+<h2>Easy Mode</h2>
+
+<p>This tutorial is geared toward an edge case when you want to pair the Mac OS X Keynote with the iOS device Keynote
+since only WiFi is allowed in order to use Keynote Remote. If you have 2 iOS devices you can use either WiFi or
+Bluetooth for the pairing, but Mac OS X Keynote does not allow Bluetooth pairing with an iOS device.</p>
+
+<h3>Just to Be Clear</h3>
+
+<p>The below table describes the pairing situations and if they work or not:</p>
+
+<table><thead>
+<tr>
+<th style="text-align: left">Device 1</th>
+<th style="text-align: left">Device 2</th>
+<th style="text-align: center">Type</th>
+<th style="text-align: center">Allowed to Pair</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: left">Mac OS X</td>
+<td style="text-align: left">iOS Device</td>
+<td style="text-align: center">Same WiFi</td>
+<td style="text-align: center">Yes</td>
+</tr>
+<tr>
+<td style="text-align: left">Mac OS X</td>
+<td style="text-align: left">iOS Device</td>
+<td style="text-align: center">Bluetooth</td>
+<td style="text-align: center">No</td>
+</tr>
+<tr>
+<td style="text-align: left">iOS Device</td>
+<td style="text-align: left">iOS Device</td>
+<td style="text-align: center">Same WiFi</td>
+<td style="text-align: center">Yes</td>
+</tr>
+<tr>
+<td style="text-align: left">iOS Device</td>
+<td style="text-align: left">iOS Device</td>
+<td style="text-align: center">Bluetooth</td>
+<td style="text-align: center">Yes</td>
+</tr>
+</tbody></table>
+
+<p>For instructions on the allowed cases you can view <a href="http://support.apple.com/en-us/HT6112">Apple&#39;s Support Site</a> for more detailed instructions.
+Here I want to focus on the case when you can&#39;t pair your Mac OS X device and the iOS device.</p>
+
+<h2>Edge Case</h2>
+
+<p>I found that I could not pair my MacBook Pro with my iPhone even when they were on the same WiFi network. I think
+there may have been some firewall rules on the network that prevented the pairing to occur. Since Bluetooth doesn&#39;t
+work, this meant I wouldn&#39;t be able to pair. However, I found <a href="http://macmost.com/keynote-remote-without-a-wi-fi-network.html">a tutorial</a> for an older version of Keynote
+that worked and wanted to share a more written out tutorial rather than a video and with the most updated versions.</p>
+
+<p>This method allows you to set up a network on your Mac OS X device and connect to it with your iOS device thus
+creating an ad-hoc network to communicate and pair the Keynote applications. Once set, you can present to your
+heart&#39;s desire!</p>
+
+<h3>Step 1: Set Up the Network</h3>
+
+<p>First you&#39;ll want to go to your network settings (in top right corner of the taskbar) and select &quot;Create Network ...&quot;</p>
+
+<p><center><img src="http://www.richardhsu.me/images/keynote-remote/01-mac-network.png" /></center></p>
+
+<p>From there a pop-up asks for the network name that you want to create. I called mine &quot;keynote-wifi&quot; and then I added
+security as 128-bit WEP with a password. Hit &quot;Create&quot; and the network should be created.</p>
+
+<p><center><img src="http://www.richardhsu.me/images/keynote-remote/02-mac-name.png" /></center>
+<center><img src="http://www.richardhsu.me/images/keynote-remote/03-mac-security.png" /></center></p>
+
+<h3>Step 2: Join the Network</h3>
+
+<p>On your iOS device you&#39;ll now need to join the network that you just created. Go into your &quot;Settings &gt; WiFi&quot; settings
+and scroll down to the &quot;Devices&quot; section where you should see &quot;keynote-wifi&quot; or whatever name you used for the network
+that you created in Step 1.</p>
+
+<p><center><img src="http://www.richardhsu.me/images/keynote-remote/04-ios-wifi.png" /></center></p>
+
+<p>It&#39;ll ask if you want to join the network even though it doesn&#39;t have access to the Internet. This is completely fine!
+We just need the iOS device to be connected to your Mac (no Internet required). So hit &quot;Join Anyway&quot;. If you have
+Internet shared then that is completely fine and you&#39;ll see that you need to enter the password.</p>
+
+<p><center><img src="http://www.richardhsu.me/images/keynote-remote/05-ios-join.png" /></center></p>
+
+<h3>Step 3: Start iOS Keynote</h3>
+
+<p>Next, you&#39;ll need to start the iOS Keynote application. After going through possible start-up screens, you should see
+a dark screen that asks you to &quot;Tap to create a new presentation.&quot; Instead of tapping the screen, tap the icon in the
+top left corner that looks like an iPhone with a play button icon. This is the Keynote Remote part of the application.</p>
+
+<p><center><img src="http://www.richardhsu.me/images/keynote-remote/06-ios-keynote.png" /></center></p>
+
+<p>From here the application will welcome you and give you some extra details which you can step through in the images
+below. You&#39;ll hit &quot;continue&quot; which takes you to the waiting to pair screen. (A tip image is shown so you can see the
+extra instructions Apple provides you!).</p>
+
+<p><center><img src="http://www.richardhsu.me/images/keynote-remote/07-ios-remote.png" /></center>
+<center><img src="http://www.richardhsu.me/images/keynote-remote/08-ios-pair.png" /></center>
+<center><img src="http://www.richardhsu.me/images/keynote-remote/09-ios-tips.png" /></center></p>
+
+<h3>Step 4: Pair on the Mac</h3>
+
+<p>Now, go back to your Mac OS X machine and open up the Keynote preferences. There you&#39;ll see a &quot;Remotes&quot; tab. Enable
+it using the checkbox next to &quot;Enable&quot; and wait for your iOS device name to appear in the list. Then click on &quot;Link&quot;.</p>
+
+<p><center><img src="http://www.richardhsu.me/images/keynote-remote/10-mac-remotes.png" /></center></p>
+
+<p>A passcode should appear on both your Mac OS X machine and your iOS device as in the images below. Confirm the code
+and hit &quot;Confirm&quot; on the Mac OS X machine.</p>
+
+<p><center><img src="http://www.richardhsu.me/images/keynote-remote/11-passcode.png" /></center>
+<center><img src="http://www.richardhsu.me/images/keynote-remote/12-ios-passcode.png" /></center></p>
+
+<h3>Step 5: Play the Presentation</h3>
+
+<p>At this point if you&#39;ve successfully linked the two devices, you should see a big play button on your Keynote Remote
+on your iOS device! Now you can present using your iOS device as the remote!</p>
+
+<p><center><img src="http://www.richardhsu.me/images/keynote-remote/13-ios-play.png" /></center></p>
+
+<p>It&#39;s super awesome and smooth! It even gives you the options of seeing the current and next slide, or the current slide
+and notes, or the next slide, etc. And the most fun feature is the mock laser pointer it provides! I love this feature
+because it allows remote users to see what I am pointing at and not just those in the audience for the presentation!</p>
+
+<h2>Conclusion</h2>
+
+<p>I hope you learned from this tutorial in setting up Keynote Remote on your iOS device for your Mac OS X Keynote
+presentation! If anything was unclear, please let me know and I can fix it! Otherwise, good luck with your presentations!</p>
+
+<h2>Quick Tip</h2>
+
+<p>If you have multiple machines or devices. Or for whatever reason the presentation isn&#39;t working. You can always reset
+things and try again. (That solved my issue once). To remove the connection in the Keynote Remote, just hit the
+&quot;Devices&quot; button in the top left corner of the Keynote Remote application. It&#39;ll list the devices you have connected to
+and you can delete it by swiping the item to the left and hitting &quot;Delete&quot;.</p>
+
+  <!-- Page Navigation -->
+  <div id="post-navigation">
+    <div class="left">
+      
+        <a href="http://www.richardhsu.me/posts/2014/12/08/cgroups-and-no-space.html">CGroups and No Space</a>
+      
+    </div>
+    <div class="right">
+      
+    </div>
+  </div>
+
+  
+  <br />
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = 'richardhsu'; // required: replace example with your forum shortname
+
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  
+</div>
+
+    <!-- /End Posts Listing -->
+    <center><a href="http://fontawesome.io">Font Awesome</a> by Dave Gandy</center>
+  </div>
+</div>
+<!-- Tracking Code -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51347261-1', 'richardhsu.me');
+  ga('send', 'pageview');
+</script>
+<!-- /Tracking Code -->
+</body>
+</html>
