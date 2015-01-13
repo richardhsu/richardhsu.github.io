@@ -31,9 +31,9 @@ The below table describes the pairing situations and if they work or not:
 
 | Device 1 | Device 2 | Type | Allowed to Pair |
 |:---------|:---------|:----:|:---------------:|
-| Mac OS X | iOS Device | Same WiFi | Yes |
+| Mac OS X | iOS Device | Same WiFi Network | Yes |
 | Mac OS X | iOS Device | Bluetooth | No |
-| iOS Device | iOS Device | Same WiFi | Yes |
+| iOS Device | iOS Device | Same WiFi Network | Yes |
 | iOS Device | iOS Device | Bluetooth | Yes |
 
 For instructions on the allowed cases you can view [Apple's Support Site][apple] for more detailed instructions.
