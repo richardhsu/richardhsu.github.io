@@ -117,8 +117,7 @@ iframe:not([seamless]) {
 }
 
 img {
-  max-width: 800px;
-  width: 100%;
+  max-width: 100%;
 }
 
 .ios-vertical {
