@@ -2,9 +2,9 @@
 layout: post
 comments: true
 
-title: "UISegmentedControl Programmatically"
+title: "Adding a Segmented Control Programmatically"
 date: 2015-01-26 17:00:00
-tags: [Tutorial, iOS]
+tags: [Tutorial, iOS, Swift]
 ---
 
 While learning iOS programming, it was interesting to try and figure out building a custom Segmented Control
