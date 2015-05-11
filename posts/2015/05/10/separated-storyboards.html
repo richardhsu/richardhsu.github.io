@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <title>Separated Storyboards for Tab Bar Controllers</title>
+  <meta name="author" content="Richard Hsu">
+  <meta name="keywords" content="richard hsu, blog, ideas, thoughts, performance" />
+  <meta name="description" content="Richard Hsu's blog about anything and performance!" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="google-site-verification" content="OmxMsLFmNXKOxX9hZRyFW9sZcita0lpB6lfqUuZQxZs" />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="http://www.richardhsu.me/css/syntax.css" type="text/css" media="screen, projection" />
+  <link rel="stylesheet" href="http://www.richardhsu.me/css/style.css" type="text/css" media="screen, projection" />
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link rel="shortcut icon" href="http://www.richardhsu.me/images/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+<div id="header">
+  <div class="content-jar clearfix">
+    <div class="avatar left"><img src="http://www.richardhsu.me/images/profile.jpeg" height="100" width="100" /></div>
+    <div class="description">
+      <strong>Welcome to the Adventures with Richard Hsu!</strong><br />
+      Here, I explore different subjects such as performance engineering, food, tv shows, movies, and
+      really anything else that interests me! I hope to share my journey and adventures with you! Thanks
+      for visiting!
+    </div>
+    <ul class="pages">
+      <li><a href="http://www.richardhsu.me/"><i class="fa fa-home"></i> Home</a></li>
+      <li><a href="http://www.richardhsu.me/tag/"><i class="fa fa-tag"></i> Tags</a></li>
+      <li><a href="http://www.richardhsu.me/search/"><i class="fa fa-search"></i> Search Blog</a></li>
+    </ul>
+  </div>
+</div>
+<div id="container">
+  <div class="content-jar listing">
+    <!-- Beginning of Posts Listing -->
+    <div class="back-to-index"><a href="http://www.richardhsu.me">Back to Index</a></div>
+<div class="post single-post">
+  <div class="post-header">
+    <h1><a href="/posts/2015/05/10/separated-storyboards.html">Separated Storyboards for Tab Bar Controllers</a></h1>
+    <span class="post-date"><i class="fa fa-calendar"></i> May 10, 2015</span>
+    <span class="post-tags"><i class="fa fa-tag"></i>
+      <a href="/tag/tutorial" rel="tag">Tutorial</a>, <a href="/tag/ios" rel="tag">iOS</a>, <a href="/tag/swift" rel="tag">Swift</a>
+    </span>
+  </div>
+  <p>While working on an iOS project, I encountered the realization that a massive storyboard was a bad idea.
+It is simple and very easy to implement everything in one storyboard, but has many drawbacks such as
+being slow to load, difficult to get complete picture of what is going on, and if you work with others,
+difficult to deal with version control. In this tutorial, I will discuss how I separated out the
+main storyboard into multiple ones and how to get it to work specifically with a <code>TabBarController</code>.
+At the end, I will discuss why I approached it the way I did and why I felt it was a good way to do it,
+feel free to correct me or suggest other ways as I am still learning Swift and iOS development!</p>
+
+<!--more-->
+
+<h2>Introduction</h2>
+
+<p>My sample application will cover using the <code>TabBarController</code> in the storyboard mode and separating out
+each tab into its own storyboard. This allows for:</p>
+
+<ul>
+<li>Modular sections.</li>
+<li>Faster to load storyboards.</li>
+<li>Smaller storyboards that are thus easier to understand.</li>
+<li>Easier to collaborate with version control.</li>
+</ul>
+
+<h3>Disclaimer</h3>
+
+<p>I am still learning Swift and iOS development, I do not consider myself an expert and would actually
+still consider myself a beginner, but I want to share what I&#39;ve learned and worked out so far to help
+others!</p>
+
+<h2>Setting Up</h2>
+
+<p>To set up, create an iOS application as follows:</p>
+
+<ul>
+<li>Create a new <strong>single page application</strong> for iOS.</li>
+<li>Make sure to be using <strong>Swift</strong> as the language.</li>
+<li>You can leave <strong>Core Data unchecked</strong> as we do not need it.</li>
+</ul>
+
+<h3>Remove Default View Controller</h3>
+
+<ol>
+<li>Remove the default <code>ViewController.swift</code> file and &quot;Remove Reference&quot; when asked.</li>
+<li>In the <code>Main.storyboard</code> you can select the view controller that&#39;s present and delete it. We&#39;ll set up
+a new <code>TabBarController</code> instead.</li>
+</ol>
+
+<h2>Step 1: Add the Tab Bar Controller</h2>
+
+<ol>
+<li>Drag the Tab View Controller from the Utilities bar into the <code>Main.storyboard</code>.</li>
+<li>Click on the Tab View Controller and in the Attributes inspector, check the &quot;Is Initial View Controller&quot;.
+XCode will thus know what to load when the application loads.</li>
+</ol>
+
+<p><a href"http://www.richardhsu.me/images/separate-storyboard/01-initialview.png" target="_blank">
+<img src="http://www.richardhsu.me/images/separate-storyboard/01-intialview-thumb.png" />
+</a></p>
+
+<h2>Step 2: Add the View Controller in Storyboard</h2>
+
+<p>XCode is nice that the default Tab Bar Controller provides 2 tabs with <code>UIViewControllers</code>. However, just
+to be sure, I will step through adding a new tab on the storyboard and setting up the separate storyboard:</p>
+
+<ol>
+<li>The first step is to drag a View Controller from the Utilities bar into the <code>Main.storyboard</code>.</li>
+</ol>
+
+<p><img src="http://www.richardhsu.me/images/separate-storyboard/02-ctrldrag.png" /></p>
+
+<ol>
+<li>Control drag from the Tab Bar Controller to the View Controller and under &quot;Relationship Segue&quot; select
+&quot;view controllers&quot;.</li>
+</ol>
+
+<p><img src="http://www.richardhsu.me/images/separate-storyboard/03-segue.png" /></p>
+
+<p>This sets up the view controller so that it works with the <code>TabBarController</code>. You can then modify it as
+you see fit for the tab icon and names.</p>
+
+<h3>Step 3: Create the UIViewController</h3>
+
+<ol>
+<li>We&#39;re now going to start creating the separated section for the tab. We&#39;ll create a New Group in our
+project called <code>First</code>. This will be to just be modular and keep all our files associated with the
+&quot;First&quot; section such as the storyboard and the view controller to help set up using this separate
+storyboard.</li>
+<li>Then create a new file and choose <code>iOS &gt; Source &gt; Cocoa Touch Class</code> and we&#39;ll name it
+<code>FirstTabViewController</code> and make sure it subclasses <code>UIViewController</code> and is a Swift file.</li>
+</ol>
+
+<p><img src="http://www.richardhsu.me/images/separate-storyboard/04-tabcontroller.png" /></p>
+
+<ol>
+<li>This will now be the file we use to connect the two storyboards together! in <code>Main.storyboard</code> select
+the first view controller for the first tab and in the Identity tab set the class to <code>FirstTabViewController</code>.</li>
+</ol>
+
+<p><a href"http://www.richardhsu.me/images/separate-storyboard/05-firstcontroller.png" target="_blank">
+<img src="http://www.richardhsu.me/images/separate-storyboard/05-firstcontroller-thumb.png" />
+</a></p>
+
+<h3>Step 4: Create the New Storyboard</h3>
+
+<ol>
+<li>Now we can set up the new storyboard for our &quot;First&quot; section or tab. Create a new file and choose
+<code>iOS &gt; User Interface &gt; Storyboard</code> and save as <code>First</code> which will save as <code>First.storyboard</code>.</li>
+<li>This will now be the storyboard that we add all our views for the &quot;First&quot; section or tab. In this
+example, I will add a simple view controller and set the background to blue.</li>
+<li>Make sure to set your entrance point to &quot;Is Initial View Controller&quot;. <strong>If you forget to do this, then
+you will get an error on initializing the storyboard</strong>.</li>
+</ol>
+
+<p><a href"http://www.richardhsu.me/images/separate-storyboard/06-firstinitial.png" target="_blank">
+<img src="http://www.richardhsu.me/images/separate-storyboard/06-firstinitial-thumb.png" />
+</a></p>
+
+<ol>
+<li>Finally, to use the separate storyboard we will now add code to <code>viewDidLoad</code>
+in <code>FirstTabViewController.swift</code>:</li>
+</ol>
+<div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">import</span> <span class="n">UIKit</span>
+
+<span class="k">class</span> <span class="nl">FirstTabViewController</span><span class="p">:</span> <span class="bp">UIViewController</span> <span class="p">{</span>
+
+    <span class="kr">override</span> <span class="k">func</span> <span class="n">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nb">super</span><span class="p">.</span><span class="n">viewDidLoad</span><span class="p">()</span>
+
+        <span class="c1">// Do any additional setup after loading the view.</span>
+        <span class="c1">// Instantiate the separate storyboard for First section and load it</span>
+        <span class="k">var</span> <span class="n">storyboard</span> <span class="o">=</span> <span class="bp">UIStoryboard</span><span class="p">(</span><span class="nl">name</span><span class="p">:</span> <span class="s">&quot;First&quot;</span><span class="p">,</span> <span class="nl">bundle</span><span class="p">:</span> <span class="nb">nil</span><span class="p">)</span>
+        <span class="k">var</span> <span class="n">controller</span> <span class="o">=</span> <span class="n">storyboard</span><span class="p">.</span><span class="n">instantiateInitialViewController</span><span class="p">()</span> <span class="kt">as</span><span class="o">!</span> <span class="bp">UIViewController</span>
+        <span class="n">addChildViewController</span><span class="p">(</span><span class="n">controller</span><span class="p">)</span>
+        <span class="n">view</span><span class="p">.</span><span class="n">addSubview</span><span class="p">(</span><span class="n">controller</span><span class="p">.</span><span class="n">view</span><span class="p">)</span>
+        <span class="n">controller</span><span class="p">.</span><span class="n">didMoveToParentViewController</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kr">override</span> <span class="k">func</span> <span class="n">didReceiveMemoryWarning</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nb">super</span><span class="p">.</span><span class="n">didReceiveMemoryWarning</span><span class="p">()</span>
+        <span class="c1">// Dispose of any resources that can be recreated.</span>
+    <span class="p">}</span>
+
+    <span class="cm">/*</span>
+<span class="cm">    // MARK: - Navigation</span>
+
+<span class="cm">    // In a storyboard-based application, you will often want to do a little preparation before navigation</span>
+<span class="cm">    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {</span>
+<span class="cm">        // Get the new view controller using segue.destinationViewController.</span>
+<span class="cm">        // Pass the selected object to the new view controller.</span>
+<span class="cm">    }</span>
+<span class="cm">    */</span>
+
+<span class="p">}</span>
+</code></pre></div>
+<p>The most important lines are:</p>
+<div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">var</span> <span class="n">storyboard</span> <span class="o">=</span> <span class="bp">UIStoryboard</span><span class="p">(</span><span class="nl">name</span><span class="p">:</span> <span class="s">&quot;First&quot;</span><span class="p">,</span> <span class="nl">bundle</span><span class="p">:</span> <span class="nb">nil</span><span class="p">)</span>
+<span class="k">var</span> <span class="n">controller</span> <span class="o">=</span> <span class="n">storyboard</span><span class="p">.</span><span class="n">instantiateInitialViewController</span><span class="p">()</span> <span class="kt">as</span><span class="o">!</span> <span class="bp">UIViewController</span>
+<span class="n">addChildViewController</span><span class="p">(</span><span class="n">controller</span><span class="p">)</span>
+<span class="n">view</span><span class="p">.</span><span class="n">addSubview</span><span class="p">(</span><span class="n">controller</span><span class="p">.</span><span class="n">view</span><span class="p">)</span>
+<span class="n">controller</span><span class="p">.</span><span class="n">didMoveToParentViewController</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span>
+</code></pre></div>
+<p>These are the 5 lines of code that you&#39;ll use when wanting to use a separate storyboard and load it into
+your tab.</p>
+
+<blockquote>
+<p>Note: In newer versions of XCode 8.3+ you will be required to have <code>as!</code> instead of just <code>as</code> for the
+casting. The project I push is for XCode 8.2 which uses the older <code>as</code> version without the exclamation.</p>
+</blockquote>
+
+<h2>Step 5: Rinse, Lather, and Repeat</h2>
+
+<p>From here you now know how to add a new separate storyboard for each tab. All you have to do is add a new
+Storyboard and View Controller which I generally call <code>TabViewController</code> and prefaced with some name to
+describe the section. This <code>TabViewController</code> will help link your main storyboard to the separate storyboard!
+I&#39;ve gone ahead and repeated this for the second controller as well and set that background to green.</p>
+
+<blockquote>
+<p>Note: You can actually create your own parent class of <code>TabViewController</code> to house all the logic of loading
+the storyboard and adding the new storyboard as a child of the <code>TabBarController</code> and thus simplify the coding!
+I did not do this in the example to allow you to see the code in action.</p>
+</blockquote>
+
+<p>You can see the example project on my Github by <a href="https://github.com/richardhsu/SeparatedStoryboardsTabBarExample">clicking here</a>! Let me know if you have any
+questions and good luck! Below you can see the final product in a GIF format:</p>
+
+<p><img src="http://www.richardhsu.me/images/separate-storyboard/07-separatedstoryboard.png" /></p>
+
+  <!-- Page Navigation -->
+  <div id="post-navigation">
+    <div class="left">
+      
+        <a href="http://www.richardhsu.me/posts/2015/04/02/rails-4-custom-configurations.html">Rails 4 Custom Configurations</a>
+      
+    </div>
+    <div class="right">
+      
+    </div>
+  </div>
+
+  
+  <br />
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = 'richardhsu'; // required: replace example with your forum shortname
+
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  
+</div>
+
+    <!-- /End Posts Listing -->
+    <div>
+      <center><a href="http://fontawesome.io">Font Awesome</a> by Dave Gandy</center>
+    </div>
+    <div>
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- responsive -->
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-0877100694764684"
+           data-ad-slot="5749193711"
+           data-ad-format="auto"></ins>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+</div>
+<!-- Tracking Code -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-51347261-1', 'richardhsu.me');
+  ga('send', 'pageview');
+</script>
+<!-- /Tracking Code -->
+</body>
+</html>
