@@ -159,42 +159,41 @@ you will get an error on initializing the storyboard</strong>.
 </a>
 </center></li>
 <li>Finally, to use the separate storyboard we will now add code to <code>viewDidLoad</code>
-in <code>FirstTabViewController.swift</code>:
-```swift
-import UIKit</li>
+in <code>FirstTabViewController.swift</code>:</li>
 </ol>
+<div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">import</span> <span class="n">UIKit</span>
 
-<p>class FirstTabViewController: UIViewController {</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">override func viewDidLoad() {
-    super.viewDidLoad()
+<span class="k">class</span> <span class="nl">FirstTabViewController</span><span class="p">:</span> <span class="bp">UIViewController</span> <span class="p">{</span>
 
-    // Do any additional setup after loading the view.
-    // Instantiate the separate storyboard for First section and load it
-    var storyboard = UIStoryboard(name: &quot;First&quot;, bundle: nil)
-    var controller = storyboard.instantiateInitialViewController() as! UIViewController
-    addChildViewController(controller)
-    view.addSubview(controller.view)
-    controller.didMoveToParentViewController(self)
-}
+    <span class="kr">override</span> <span class="k">func</span> <span class="n">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nb">super</span><span class="p">.</span><span class="n">viewDidLoad</span><span class="p">()</span>
 
-override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-}
+        <span class="c1">// Do any additional setup after loading the view.</span>
+        <span class="c1">// Instantiate the separate storyboard for First section and load it</span>
+        <span class="k">var</span> <span class="n">storyboard</span> <span class="o">=</span> <span class="bp">UIStoryboard</span><span class="p">(</span><span class="nl">name</span><span class="p">:</span> <span class="s">&quot;First&quot;</span><span class="p">,</span> <span class="nl">bundle</span><span class="p">:</span> <span class="nb">nil</span><span class="p">)</span>
+        <span class="k">var</span> <span class="n">controller</span> <span class="o">=</span> <span class="n">storyboard</span><span class="p">.</span><span class="n">instantiateInitialViewController</span><span class="p">()</span> <span class="kt">as</span><span class="o">!</span> <span class="bp">UIViewController</span>
+        <span class="n">addChildViewController</span><span class="p">(</span><span class="n">controller</span><span class="p">)</span>
+        <span class="n">view</span><span class="p">.</span><span class="n">addSubview</span><span class="p">(</span><span class="n">controller</span><span class="p">.</span><span class="n">view</span><span class="p">)</span>
+        <span class="n">controller</span><span class="p">.</span><span class="n">didMoveToParentViewController</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span>
+    <span class="p">}</span>
 
-/*
-// MARK: - Navigation
+    <span class="kr">override</span> <span class="k">func</span> <span class="n">didReceiveMemoryWarning</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nb">super</span><span class="p">.</span><span class="n">didReceiveMemoryWarning</span><span class="p">()</span>
+        <span class="c1">// Dispose of any resources that can be recreated.</span>
+    <span class="p">}</span>
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-}
-*/
+    <span class="cm">/*</span>
+<span class="cm">    // MARK: - Navigation</span>
+
+<span class="cm">    // In a storyboard-based application, you will often want to do a little preparation before navigation</span>
+<span class="cm">    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {</span>
+<span class="cm">        // Get the new view controller using segue.destinationViewController.</span>
+<span class="cm">        // Pass the selected object to the new view controller.</span>
+<span class="cm">    }</span>
+<span class="cm">    */</span>
+
+<span class="p">}</span>
 </code></pre></div>
-<p>}
-```</p>
-
 <p>The most important lines are:</p>
 <div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">var</span> <span class="n">storyboard</span> <span class="o">=</span> <span class="bp">UIStoryboard</span><span class="p">(</span><span class="nl">name</span><span class="p">:</span> <span class="s">&quot;First&quot;</span><span class="p">,</span> <span class="nl">bundle</span><span class="p">:</span> <span class="nb">nil</span><span class="p">)</span>
 <span class="k">var</span> <span class="n">controller</span> <span class="o">=</span> <span class="n">storyboard</span><span class="p">.</span><span class="n">instantiateInitialViewController</span><span class="p">()</span> <span class="kt">as</span><span class="o">!</span> <span class="bp">UIViewController</span>
@@ -207,7 +206,7 @@ your tab.</p>
 
 <blockquote>
 <p>Note: In newer versions of XCode 8.3+ you will be required to have <code>as!</code> instead of just <code>as</code> for the
-casting. The project I push is for XCode 8.2 which uses the older <code>as</code> version without the exclamation.</p>
+casting. The project I push to Github (at end) is for XCode 8.2 which uses the older <code>as</code> version without the exclamation.</p>
 </blockquote>
 
 <h2>Step 5: Rinse, Lather, and Repeat</h2>
@@ -226,7 +225,33 @@ I did not do this in the example to allow you to see the code in action.</p>
 <p>You can see the example project on my Github by <a href="https://github.com/richardhsu/SeparatedStoryboardsTabBarExample">clicking here</a>! Let me know if you have any
 questions and good luck! Below you can see the final product in a GIF format:</p>
 
-<p><img src="http://www.richardhsu.me/images/separate-storyboard/07-separatedstoryboard.gif" /></p>
+<p><center>
+<img src="http://www.richardhsu.me/images/separate-storyboard/07-separatedstoryboard.gif" />
+</center></p>
+
+<h2>Why This Way?</h2>
+
+<p>I&#39;m not sure if it is necessary to discuss what happened in this tutorial but I thought I&#39;d bring a
+bit of my thoughts into the post. In the beginning, a partner and I were working on a project which
+had 5 tabs and we had all the UI in the <code>Main.storyboard</code>. This file took a bit to load and whenever
+we both modified some UI elements, we had to worry about merges which are not easy. Thus I set out
+to actually figure out how to separate out the storyboards so that we could have a more modular
+project.</p>
+
+<p>My first instinct was to just try to programmatically add the Tab Bar Controller, but then I thought
+this would be too much work because we already had things started. I still think it&#39;s nice to have
+the storyboard with the <code>TabBarController</code> because it allows us to add segues or at least get a
+visual feel of the application we are designing rather than having it all in code.</p>
+
+<p>It seemed only logically that I needed to attach a view controller in <code>Main.storyboard</code> in order to
+get the proper tab nesting with the <code>TabBarController</code>. If I did not have this, I could easily program
+for example buttons or programmed segues to load the storyboards instead; however, I think that
+this tutorial universally helps understand using separate storyboards due to the extra steps needed
+to work with the <code>TabBarController</code>.</p>
+
+<p>I do still wonder if this is the correct way to do it, so let me know if there is a better way or if
+you have a different way and want to discuss the differences or pros/cons! Thanks and hope you enjoyed
+this tutorial!</p>
 
   <!-- Page Navigation -->
   <div id="post-navigation">

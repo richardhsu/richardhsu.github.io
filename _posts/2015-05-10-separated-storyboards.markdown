@@ -113,6 +113,7 @@ you will get an error on initializing the storyboard**.
 </center>
 4. Finally, to use the separate storyboard we will now add code to `viewDidLoad`
 in `FirstTabViewController.swift`:
+
 ```swift
 import UIKit
 
@@ -162,7 +163,7 @@ These are the 5 lines of code that you'll use when wanting to use a separate sto
 your tab.
 
 > Note: In newer versions of XCode 8.3+ you will be required to have `as!` instead of just `as` for the
-casting. The project I push is for XCode 8.2 which uses the older `as` version without the exclamation.
+casting. The project I push to Github (at end) is for XCode 8.2 which uses the older `as` version without the exclamation.
 
 ## Step 5: Rinse, Lather, and Repeat
 
@@ -178,6 +179,32 @@ I did not do this in the example to allow you to see the code in action.
 You can see the example project on my Github by [clicking here][github]! Let me know if you have any
 questions and good luck! Below you can see the final product in a GIF format:
 
+<center>
 <img src="{{ site.url }}/images/separate-storyboard/07-separatedstoryboard.gif" />
+</center>
+
+## Why This Way?
+
+I'm not sure if it is necessary to discuss what happened in this tutorial but I thought I'd bring a
+bit of my thoughts into the post. In the beginning, a partner and I were working on a project which
+had 5 tabs and we had all the UI in the `Main.storyboard`. This file took a bit to load and whenever
+we both modified some UI elements, we had to worry about merges which are not easy. Thus I set out
+to actually figure out how to separate out the storyboards so that we could have a more modular
+project.
+
+My first instinct was to just try to programmatically add the Tab Bar Controller, but then I thought
+this would be too much work because we already had things started. I still think it's nice to have
+the storyboard with the `TabBarController` because it allows us to add segues or at least get a
+visual feel of the application we are designing rather than having it all in code.
+
+It seemed only logically that I needed to attach a view controller in `Main.storyboard` in order to
+get the proper tab nesting with the `TabBarController`. If I did not have this, I could easily program
+for example buttons or programmed segues to load the storyboards instead; however, I think that
+this tutorial universally helps understand using separate storyboards due to the extra steps needed
+to work with the `TabBarController`.
+
+I do still wonder if this is the correct way to do it, so let me know if there is a better way or if
+you have a different way and want to discuss the differences or pros/cons! Thanks and hope you enjoyed
+this tutorial!
 
 [github]: https://github.com/richardhsu/SeparatedStoryboardsTabBarExample
