@@ -56,7 +56,7 @@ XCode will thus know what to load when the application loads.
 
 <center>
 <a href="{{ site.url }}/images/separate-storyboard/01-initialview.png" target="_blank">
-<img src="{{ site.url }}/images/separate-storyboard/01-intialview-thumb.png" />
+<img src="{{ site.url }}/images/separate-storyboard/01-initialview-thumb.png" />
 </a>
 </center>
 
