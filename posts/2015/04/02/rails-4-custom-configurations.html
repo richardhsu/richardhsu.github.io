@@ -42,52 +42,82 @@
       <a href="/tag/tips" rel="tag">Tips</a>, <a href="/tag/rails4" rel="tag">Rails4</a>, <a href="/tag/ruby" rel="tag">Ruby</a>
     </span>
   </div>
-  <p>Was working on a Rails 4 side project when I realized that I should make a configuration file for a constant
-that I wanted. I knew there was a way to do configuration in Rails, but wasn&#39;t sure what best practices were
-so I looked it up. It turns out that as of Rails 4.2 there is now a configuration <code>x</code> namespace for you to
-provide your own custom configurations!</p>
+  <p>Was working on a Rails 4 side project when I realized that I should make a configuration file for a constant that I
+wanted. I knew there was a way to do configuration in Rails, but wasn&#39;t sure what best practices were so I looked it up.
+It turns out that as of Rails 4.2 there is now a configuration <code>x</code> namespace for you to provide your own custom
+configurations!</p>
 
 <!--more-->
 
-<p>If you are developing in Rails 4.2+ then you have access to the <code>x</code> configuration namespace! Rails offers
-four standard places to put initialization code:</p>
+<p>If you are developing in Rails 4.2+ then you have access to the <code>x</code> configuration namespace! Rails offers four standard
+places to put initialization code:</p>
 
 <ul>
-<li>In the <code>config/application.rb</code> file: This is for configurations you need to run before Rails itself is
-even loaded. This does not seem to be the recommended way as in the file it states: &quot;Application configuration
-should go into files in <code>config/initializers</code> all <code>.rb</code> files in that directory are automatically loaded.&quot;</li>
+<li>In the <code>config/application.rb</code> file: This is for configurations you need to run before Rails itself is even loaded.
+This does not seem to be the recommended way as in the file it states: &quot;Application configuration should go into files
+in <code>config/initializers/</code> all <code>.rb</code> files in that directory are automatically loaded.&quot;</li>
 <li>Environment-specific configuration files: These are under <code>config/environments/</code> folder such as
 <code>config/environments/production.rb</code> and should be used for environment-specific configurations.</li>
-<li>Initializers files which are under <code>config/initializers</code>: This seems to be the suggested method mentioned
-earlier and is the way I will implement it.</li>
-<li>After-initializers which seem to be utilized with <code>config.after_initialize</code> method in an initializer: This
-would be for any configurations that need to be done after Rails has finished initializing and all other
-initializers under <code>config/initializers</code> are completed.</li>
+<li>Initializers files which are under <code>config/initializers/</code>: This seems to be the suggested method mentioned earlier and
+is the way I will implement it.</li>
+<li>After-initializers which seem to be utilized with <code>config.after_initialize</code> method in an initializer: This would be
+for any configurations that need to be done after Rails has finished initializing and all other initializers under
+<code>config/initializers/</code> are completed.</li>
 </ul>
 
 <h2>Initializers</h2>
 
-<p>You can add your own initializer under <code>config/initializers</code> as a <code>file_name.rb</code> and it will be loaded
-automagically with all the other initializers in alphabetical order. I added a <code>my_app.rb</code> file to the
-folder and put the following:</p>
+<p>You can add your own initializer under <code>config/initializers/</code> as a <code>file_name.rb</code> and it will be loaded automagically
+with all the other initializers in alphabetical order. I added a <code>my_app.rb</code> file to the folder and put the following:</p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># My application specific configurations</span>
+<span class="c1"># In form of:</span>
+<span class="c1"># MyApp::Application.config.x.&lt;KEY_NAME&gt; = &lt;VALUE_NAME&gt;</span>
 <span class="no">MyApp</span><span class="o">::</span><span class="no">Application</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">retries</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="no">MyApp</span><span class="o">::</span><span class="no">Application</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">log_level</span> <span class="o">=</span> <span class="ss">:debug</span>
 </code></pre></div>
-<p>That&#39;s it! Simple, realize that this is specifically the <code>x</code> namespace and you cannot rename it! I originally
-got tripped up by it because I thought you could use whatever you want as per <a href="http://guides.rubyonrails.org/v4.2.0/configuring.html#custom-configuration">the documentation</a> was
-not super specific on the <code>x</code> portion. But as per the <a href="http://guides.rubyonrails.org/4_2_release_notes.html#railties-notable-changes">4.2 release notes</a> it clearly states that
-they &quot;Introduced the <code>x</code> namespace for defining custom configuration options&quot;.</p>
+<p>That&#39;s it! You can now add application specific configuration variables. Be careful though, you shouldn&#39;t use this to
+store sensitive data such as secret keys or passwords!</p>
 
-<h3>Using Custom Configurations</h3>
+<p>Realize that this is <strong>specifically</strong> the <code>x</code> namespace and you cannot rename it! I originally got tripped up by it
+because I thought you could use whatever you want as per <a href="http://guides.rubyonrails.org/v4.2.0/configuring.html#custom-configuration">the documentation</a> was not super specific on the <code>x</code>
+portion. But as per the <a href="http://guides.rubyonrails.org/4_2_release_notes.html#railties-notable-changes">4.2 release notes</a> it clearly states that they &quot;Introduced the <code>x</code> namespace for
+defining custom configuration options&quot;.</p>
 
-<p>Finally, to use your custom configurations anywhere, you can actually now do the following anywhere in your
-application to use:</p>
+<h3>Example Initializer</h3>
+
+<p>Just for clarity, if you look in <code>config/application.rb</code> you&#39;ll see the following code which following <code>module</code> would be
+your application&#39;s name, which as a second example name is <code>MyRailsApplication</code>.</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="no">File</span><span class="o">.</span><span class="n">expand_path</span><span class="p">(</span><span class="s1">&#39;../boot&#39;</span><span class="p">,</span> <span class="bp">__FILE__</span><span class="p">)</span>
+
+<span class="nb">require</span> <span class="s1">&#39;rails/all&#39;</span>
+
+<span class="c1"># Require the gems listed in Gemfile, including any gems</span>
+<span class="c1"># you&#39;ve limited to :test, :development, or :production.</span>
+<span class="no">Bundler</span><span class="o">.</span><span class="n">require</span><span class="p">(</span><span class="o">*</span><span class="no">Rails</span><span class="o">.</span><span class="n">groups</span><span class="p">)</span>
+
+<span class="k">module</span> <span class="nn">MyRailsApplication</span>
+  <span class="k">class</span> <span class="nc">Application</span> <span class="o">&lt;</span> <span class="no">Rails</span><span class="o">::</span><span class="no">Application</span>
+<span class="o">.</span><span class="n">.</span><span class="o">.</span>
+</code></pre></div>
+<p>Thus with <code>MyRailsApplication</code>, I could create a file under <code>config/initializers/</code> as <code>myrailsapplication.rb</code> with the
+contents:</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># My application specific configurations</span>
+<span class="c1"># In form of:</span>
+<span class="c1"># MyApp::Application.config.x.&lt;KEY_NAME&gt; = &lt;VALUE_NAME&gt;</span>
+<span class="no">MyRailsApplication</span><span class="o">::</span><span class="no">Application</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">retries</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="no">MyRailsApplication</span><span class="o">::</span><span class="no">Application</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">log_level</span> <span class="o">=</span> <span class="ss">:debug</span>
+<span class="no">MyRailsApplication</span><span class="o">::</span><span class="no">Application</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">session_expiration</span> <span class="o">=</span> <span class="mi">2</span><span class="o">.</span><span class="n">week</span>
+</code></pre></div>
+<h2>Using Custom Configurations</h2>
+
+<p>Finally, to use your custom configurations anywhere, you can actually now do the following anywhere in your application
+to use:</p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Rails</span><span class="o">.</span><span class="n">configuration</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">retries</span>    <span class="c1"># =&gt; 3</span>
 <span class="no">Rails</span><span class="o">.</span><span class="n">configuration</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">log_level</span>  <span class="c1"># =&gt; :debug</span>
+<span class="no">Rails</span><span class="o">.</span><span class="n">configuration</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">session_expiration</span>  <span class="c1"># =&gt; 14 days</span>
 </code></pre></div>
-<p>That is all folks! Hope you learned a bit from the tip, and realize, sometimes they hide things in the
-release notes that are helpful!</p>
+<p><strong>Notice</strong> that we use <code>Rails.configuration</code> to access the custom configurations. And that is all folks! Hope you
+learned a bit from the tip, and realize, sometimes they hide things in the release notes that are helpful!</p>
 
   <!-- Page Navigation -->
   <div id="post-navigation">
