@@ -7,6 +7,9 @@ date: 2015-04-02 22:08:00
 tags: [Tips, Rails4, Ruby]
 ---
 
+> **Update: June 29, 2015**: Added a clarifying example for `MyApp` name and a template on how the custom configuration
+> would look like.
+
 Was working on a Rails 4 side project when I realized that I should make a configuration file for a constant that I
 wanted. I knew there was a way to do configuration in Rails, but wasn't sure what best practices were so I looked it up.
 It turns out that as of Rails 4.2 there is now a configuration `x` namespace for you to provide your own custom
