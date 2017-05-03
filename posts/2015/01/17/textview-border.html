@@ -54,14 +54,14 @@ easy way to change the border style!</p>
 
 <p>Since XCode doesn&#39;t allow an easy selection to change the border of the text view, we have to program it! So I
 will present the snippet to set the border like that of default text fields and will explain afterward:</p>
-<div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="p">@</span><span class="kt">IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nl">taskNotes</span><span class="p">:</span> <span class="bp">UITextView</span><span class="o">!</span>
+<div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">taskNotes</span><span class="p">:</span> <span class="kt">UITextView</span><span class="o">!</span>
 
-<span class="kr">override</span> <span class="k">func</span> <span class="n">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nb">super</span><span class="p">.</span><span class="n">viewDidLoad</span><span class="p">()</span>
-  <span class="k">var</span> <span class="nl">borderColor</span> <span class="p">:</span> <span class="bp">UIColor</span> <span class="o">=</span> <span class="bp">UIColor</span><span class="p">(</span><span class="nl">red</span><span class="p">:</span> <span class="mf">0.85</span><span class="p">,</span> <span class="nl">green</span><span class="p">:</span> <span class="mf">0.85</span><span class="p">,</span> <span class="nl">blue</span><span class="p">:</span> <span class="mf">0.85</span><span class="p">,</span> <span class="nl">alpha</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">)</span>
-  <span class="n">taskNotes</span><span class="p">.</span><span class="n">layer</span><span class="p">.</span><span class="n">borderWidth</span> <span class="o">=</span> <span class="mf">0.5</span>
-  <span class="n">taskNotes</span><span class="p">.</span><span class="n">layer</span><span class="p">.</span><span class="n">borderColor</span> <span class="o">=</span> <span class="n">borderColor</span><span class="p">.</span><span class="bp">CGColor</span>
-  <span class="n">taskNotes</span><span class="p">.</span><span class="n">layer</span><span class="p">.</span><span class="n">cornerRadius</span> <span class="o">=</span> <span class="mf">5.0</span>
+<span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+  <span class="k">var</span> <span class="nv">borderColor</span> <span class="p">:</span> <span class="kt">UIColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mf">0.85</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mf">0.85</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mf">0.85</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">)</span>
+  <span class="n">taskNotes</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderWidth</span> <span class="o">=</span> <span class="mf">0.5</span>
+  <span class="n">taskNotes</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">borderColor</span> <span class="o">=</span> <span class="n">borderColor</span><span class="o">.</span><span class="kt">CGColor</span>
+  <span class="n">taskNotes</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">cornerRadius</span> <span class="o">=</span> <span class="mf">5.0</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>I have a <code>taskNotes</code> text view in my storyboard which I&#39;ve linked in the view controller. From here, in the

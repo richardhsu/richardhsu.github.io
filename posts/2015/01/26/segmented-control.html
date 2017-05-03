@@ -78,13 +78,13 @@ that we need to take control of the <code>loadView</code> function in the <code>
 the default view. By doing this, we can add the necessary components that we want before the view has loaded.</p>
 
 <p>In <code>ViewController.swift</code> start off by adding the following override function:</p>
-<div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="cm">/**</span>
-<span class="cm">  Loads the view and in our case we override default loadView to provide</span>
-<span class="cm">  custom SegmentedControl.</span>
-<span class="cm">*/</span>
-<span class="kr">override</span> <span class="k">func</span> <span class="nf">loadView</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nb">super</span><span class="p">.</span><span class="n">loadView</span><span class="p">()</span>
-  <span class="nb">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="bp">UIColor</span><span class="p">.</span><span class="n">purpleColor</span><span class="p">()</span>
+<div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="cm">/**
+  Loads the view and in our case we override default loadView to provide
+  custom SegmentedControl.
+*/</span>
+<span class="k">override</span> <span class="kd">func</span> <span class="nf">loadView</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">super</span><span class="o">.</span><span class="nf">loadView</span><span class="p">()</span>
+  <span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="o">.</span><span class="nf">purpleColor</span><span class="p">()</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>Here we first have our default <code>super</code> class <code>loadView</code> run in order to generate the default view settings that
@@ -118,9 +118,9 @@ at the end of this tutorial.</p>
 <p>Start off by defining the <code>items</code> array which contains an array of strings for the titles of your segments. Next,
 initialize a <code>UISegmentedControl</code> with this <code>items</code> array.</p>
 <div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="c1">// Initialize</span>
-<span class="k">let</span> <span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;Purple&quot;</span><span class="p">,</span> <span class="s">&quot;Green&quot;</span><span class="p">,</span> <span class="s">&quot;Blue&quot;</span><span class="p">]</span>
-<span class="k">let</span> <span class="n">customSC</span> <span class="o">=</span> <span class="bp">UISegmentedControl</span><span class="p">(</span><span class="nl">items</span><span class="p">:</span> <span class="n">items</span><span class="p">)</span>
-<span class="n">customSC</span><span class="p">.</span><span class="n">selectedSegmentIndex</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">let</span> <span class="nv">items</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Purple"</span><span class="p">,</span> <span class="s">"Green"</span><span class="p">,</span> <span class="s">"Blue"</span><span class="p">]</span>
+<span class="k">let</span> <span class="nv">customSC</span> <span class="o">=</span> <span class="kt">UISegmentedControl</span><span class="p">(</span><span class="nv">items</span><span class="p">:</span> <span class="n">items</span><span class="p">)</span>
+<span class="n">customSC</span><span class="o">.</span><span class="n">selectedSegmentIndex</span> <span class="o">=</span> <span class="mi">0</span>
 </code></pre></div>
 <h3>Set the Frame</h3>
 
@@ -128,18 +128,18 @@ initialize a <code>UISegmentedControl</code> with this <code>items</code> array.
 the frame to be near the top of the view and since the bounds give the full height of the screen, we will use
 only 10% of it for our SegmentedControl.</p>
 <div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="c1">// Set up Frame and SegmentedControl</span>
-<span class="k">let</span> <span class="n">frame</span> <span class="o">=</span> <span class="bp">UIScreen</span><span class="p">.</span><span class="n">mainScreen</span><span class="p">().</span><span class="n">bounds</span>
-<span class="n">customSC</span><span class="p">.</span><span class="n">frame</span> <span class="o">=</span> <span class="n">CGRectMake</span><span class="p">(</span><span class="n">frame</span><span class="p">.</span><span class="n">minX</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">frame</span><span class="p">.</span><span class="n">minY</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span>
-                            <span class="n">frame</span><span class="p">.</span><span class="n">width</span> <span class="o">-</span> <span class="mi">20</span><span class="p">,</span> <span class="n">frame</span><span class="p">.</span><span class="n">height</span><span class="o">*</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">frame</span> <span class="o">=</span> <span class="kt">UIScreen</span><span class="o">.</span><span class="nf">mainScreen</span><span class="p">()</span><span class="o">.</span><span class="n">bounds</span>
+<span class="n">customSC</span><span class="o">.</span><span class="n">frame</span> <span class="o">=</span> <span class="kt">CGRectMake</span><span class="p">(</span><span class="n">frame</span><span class="o">.</span><span class="n">minX</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">frame</span><span class="o">.</span><span class="n">minY</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span>
+                            <span class="n">frame</span><span class="o">.</span><span class="n">width</span> <span class="o">-</span> <span class="mi">20</span><span class="p">,</span> <span class="n">frame</span><span class="o">.</span><span class="n">height</span><span class="o">*</span><span class="mf">0.1</span><span class="p">)</span>
 </code></pre></div>
 <h3>Styling (Optional)</h3>
 
 <p>You really don&#39;t need this section but if you want to end with the same results as me, then you can
 add some styling to the Segmented Control as follows:</p>
 <div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="c1">// Style the Segmented Control</span>
-<span class="n">customSC</span><span class="p">.</span><span class="n">layer</span><span class="p">.</span><span class="n">cornerRadius</span> <span class="o">=</span> <span class="mf">5.0</span>  <span class="c1">// Don&#39;t let background bleed</span>
-<span class="n">customSC</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="bp">UIColor</span><span class="p">.</span><span class="n">blackColor</span><span class="p">()</span>
-<span class="n">customSC</span><span class="p">.</span><span class="n">tintColor</span> <span class="o">=</span> <span class="bp">UIColor</span><span class="p">.</span><span class="n">whiteColor</span><span class="p">()</span>
+<span class="n">customSC</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">cornerRadius</span> <span class="o">=</span> <span class="mf">5.0</span>  <span class="c1">// Don't let background bleed</span>
+<span class="n">customSC</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="o">.</span><span class="nf">blackColor</span><span class="p">()</span>
+<span class="n">customSC</span><span class="o">.</span><span class="n">tintColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="o">.</span><span class="nf">whiteColor</span><span class="p">()</span>
 </code></pre></div>
 <h3>Add Target</h3>
 
@@ -147,7 +147,7 @@ add some styling to the Segmented Control as follows:</p>
 iOS knows what to do when a given control event is performed. The main control event used is
 <code>.ValueChanged</code> which is triggered whenever the segment selection is changed.</p>
 <div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="c1">// Add target action method</span>
-<span class="n">customSC</span><span class="p">.</span><span class="n">addTarget</span><span class="p">(</span><span class="nb">self</span><span class="p">,</span> <span class="nl">action</span><span class="p">:</span> <span class="s">&quot;changeColor:&quot;</span><span class="p">,</span> <span class="nl">forControlEvents</span><span class="p">:</span> <span class="p">.</span><span class="n">ValueChanged</span><span class="p">)</span>
+<span class="n">customSC</span><span class="o">.</span><span class="nf">addTarget</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="s">"changeColor:"</span><span class="p">,</span> <span class="nv">forControlEvents</span><span class="p">:</span> <span class="o">.</span><span class="kt">ValueChanged</span><span class="p">)</span>
 </code></pre></div>
 <p>We will define the actual handler later, for now understand though that it will be called <code>changeColor</code>
 so if you wanted to have <code>segmentControlHandler</code> as your function name then have
@@ -157,25 +157,25 @@ so if you wanted to have <code>segmentControlHandler</code> as your function nam
 
 <p>Finally we need to add the Segment Control as a subview to our main view:</p>
 <div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="c1">// Add this custom Segmented Control to our view</span>
-<span class="nb">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">addSubview</span><span class="p">(</span><span class="n">customSC</span><span class="p">)</span>
+<span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">customSC</span><span class="p">)</span>
 </code></pre></div>
 <h2>Segment Control Action Handler</h2>
 
 <p>Now that we&#39;ve finished creating the Segment Control, we will now define a new function. This is no longer
 part of the <code>loadView</code> function, but still in the <code>ViewController</code>. This is the &quot;target&quot; that we needed
 for the <code>addTarget</code> call on the segment control. So anywhere in the file, you can define it as follows:</p>
-<div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="cm">/**</span>
-<span class="cm">  Handler for when custom Segmented Control changes and will change the</span>
-<span class="cm">  background color of the view depending on the selection.</span>
-<span class="cm"> */</span>
-<span class="k">func</span> <span class="nf">changeColor</span><span class="p">(</span><span class="nl">sender</span><span class="p">:</span> <span class="bp">UISegmentedControl</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">switch</span> <span class="n">sender</span><span class="p">.</span><span class="n">selectedSegmentIndex</span> <span class="p">{</span>
-    <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
-        <span class="nb">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="bp">UIColor</span><span class="p">.</span><span class="n">greenColor</span><span class="p">()</span>
-    <span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
-        <span class="nb">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="bp">UIColor</span><span class="p">.</span><span class="n">blueColor</span><span class="p">()</span>
-    <span class="k">default</span><span class="o">:</span>
-        <span class="nb">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="bp">UIColor</span><span class="p">.</span><span class="n">purpleColor</span><span class="p">()</span>
+<div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="cm">/**
+  Handler for when custom Segmented Control changes and will change the
+  background color of the view depending on the selection.
+ */</span>
+<span class="kd">func</span> <span class="nf">changeColor</span><span class="p">(</span><span class="nv">sender</span><span class="p">:</span> <span class="kt">UISegmentedControl</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">switch</span> <span class="n">sender</span><span class="o">.</span><span class="n">selectedSegmentIndex</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="o">.</span><span class="nf">greenColor</span><span class="p">()</span>
+    <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="o">.</span><span class="nf">blueColor</span><span class="p">()</span>
+    <span class="k">default</span><span class="p">:</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="o">.</span><span class="nf">purpleColor</span><span class="p">()</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -199,69 +199,69 @@ with as well and you can go to it by <a href="https://github.com/richardhsu/UISe
 
 <p>Here is the final code for the <code>ViewController.swift</code> with some added print statements to see in
 the console when running a simulation:</p>
-<div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">import</span> <span class="n">UIKit</span>
+<div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">import</span> <span class="kt">UIKit</span>
 
-<span class="k">class</span> <span class="nl">ViewController</span><span class="p">:</span> <span class="bp">UIViewController</span> <span class="p">{</span>
+<span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
 
-  <span class="cm">/**</span>
-<span class="cm">    Loads the view and in our case we override default loadView to provide</span>
-<span class="cm">    custom SegmentedControl.</span>
-<span class="cm">  */</span>
-  <span class="kr">override</span> <span class="k">func</span> <span class="n">loadView</span><span class="p">()</span> <span class="p">{</span>
-      <span class="nb">super</span><span class="p">.</span><span class="n">loadView</span><span class="p">()</span>
-      <span class="nb">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="bp">UIColor</span><span class="p">.</span><span class="n">purpleColor</span><span class="p">()</span>
+  <span class="cm">/**
+    Loads the view and in our case we override default loadView to provide
+    custom SegmentedControl.
+  */</span>
+  <span class="k">override</span> <span class="kd">func</span> <span class="nf">loadView</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">super</span><span class="o">.</span><span class="nf">loadView</span><span class="p">()</span>
+      <span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="o">.</span><span class="nf">purpleColor</span><span class="p">()</span>
 
-      <span class="n">println</span><span class="p">(</span><span class="s">&quot;Main view&#39;s loadView() called.&quot;</span><span class="p">)</span>
+      <span class="nf">println</span><span class="p">(</span><span class="s">"Main view's loadView() called."</span><span class="p">)</span>
 
       <span class="c1">// Initialize</span>
-      <span class="k">let</span> <span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;Purple&quot;</span><span class="p">,</span> <span class="s">&quot;Green&quot;</span><span class="p">,</span> <span class="s">&quot;Blue&quot;</span><span class="p">]</span>
-      <span class="k">let</span> <span class="n">customSC</span> <span class="o">=</span> <span class="bp">UISegmentedControl</span><span class="p">(</span><span class="nl">items</span><span class="p">:</span> <span class="n">items</span><span class="p">)</span>
-      <span class="n">customSC</span><span class="p">.</span><span class="n">selectedSegmentIndex</span> <span class="o">=</span> <span class="mi">0</span>
+      <span class="k">let</span> <span class="nv">items</span> <span class="o">=</span> <span class="p">[</span><span class="s">"Purple"</span><span class="p">,</span> <span class="s">"Green"</span><span class="p">,</span> <span class="s">"Blue"</span><span class="p">]</span>
+      <span class="k">let</span> <span class="nv">customSC</span> <span class="o">=</span> <span class="kt">UISegmentedControl</span><span class="p">(</span><span class="nv">items</span><span class="p">:</span> <span class="n">items</span><span class="p">)</span>
+      <span class="n">customSC</span><span class="o">.</span><span class="n">selectedSegmentIndex</span> <span class="o">=</span> <span class="mi">0</span>
 
       <span class="c1">// Set up Frame and SegmentedControl</span>
-      <span class="k">let</span> <span class="n">frame</span> <span class="o">=</span> <span class="bp">UIScreen</span><span class="p">.</span><span class="n">mainScreen</span><span class="p">().</span><span class="n">bounds</span>
-      <span class="n">customSC</span><span class="p">.</span><span class="n">frame</span> <span class="o">=</span> <span class="n">CGRectMake</span><span class="p">(</span><span class="n">frame</span><span class="p">.</span><span class="n">minX</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">frame</span><span class="p">.</span><span class="n">minY</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span>
-                                  <span class="n">frame</span><span class="p">.</span><span class="n">width</span> <span class="o">-</span> <span class="mi">20</span><span class="p">,</span> <span class="n">frame</span><span class="p">.</span><span class="n">height</span><span class="o">*</span><span class="mf">0.1</span><span class="p">)</span>
+      <span class="k">let</span> <span class="nv">frame</span> <span class="o">=</span> <span class="kt">UIScreen</span><span class="o">.</span><span class="nf">mainScreen</span><span class="p">()</span><span class="o">.</span><span class="n">bounds</span>
+      <span class="n">customSC</span><span class="o">.</span><span class="n">frame</span> <span class="o">=</span> <span class="kt">CGRectMake</span><span class="p">(</span><span class="n">frame</span><span class="o">.</span><span class="n">minX</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">frame</span><span class="o">.</span><span class="n">minY</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span>
+                                  <span class="n">frame</span><span class="o">.</span><span class="n">width</span> <span class="o">-</span> <span class="mi">20</span><span class="p">,</span> <span class="n">frame</span><span class="o">.</span><span class="n">height</span><span class="o">*</span><span class="mf">0.1</span><span class="p">)</span>
 
       <span class="c1">// Style the Segmented Control</span>
-      <span class="n">customSC</span><span class="p">.</span><span class="n">layer</span><span class="p">.</span><span class="n">cornerRadius</span> <span class="o">=</span> <span class="mf">5.0</span>  <span class="c1">// Don&#39;t let background bleed</span>
-      <span class="n">customSC</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="bp">UIColor</span><span class="p">.</span><span class="n">blackColor</span><span class="p">()</span>
-      <span class="n">customSC</span><span class="p">.</span><span class="n">tintColor</span> <span class="o">=</span> <span class="bp">UIColor</span><span class="p">.</span><span class="n">whiteColor</span><span class="p">()</span>
+      <span class="n">customSC</span><span class="o">.</span><span class="n">layer</span><span class="o">.</span><span class="n">cornerRadius</span> <span class="o">=</span> <span class="mf">5.0</span>  <span class="c1">// Don't let background bleed</span>
+      <span class="n">customSC</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="o">.</span><span class="nf">blackColor</span><span class="p">()</span>
+      <span class="n">customSC</span><span class="o">.</span><span class="n">tintColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="o">.</span><span class="nf">whiteColor</span><span class="p">()</span>
 
       <span class="c1">// Add target action method</span>
-      <span class="n">customSC</span><span class="p">.</span><span class="n">addTarget</span><span class="p">(</span><span class="nb">self</span><span class="p">,</span> <span class="nl">action</span><span class="p">:</span> <span class="s">&quot;changeColor:&quot;</span><span class="p">,</span> <span class="nl">forControlEvents</span><span class="p">:</span> <span class="p">.</span><span class="n">ValueChanged</span><span class="p">)</span>
+      <span class="n">customSC</span><span class="o">.</span><span class="nf">addTarget</span><span class="p">(</span><span class="k">self</span><span class="p">,</span> <span class="nv">action</span><span class="p">:</span> <span class="s">"changeColor:"</span><span class="p">,</span> <span class="nv">forControlEvents</span><span class="p">:</span> <span class="o">.</span><span class="kt">ValueChanged</span><span class="p">)</span>
 
       <span class="c1">// Add this custom Segmented Control to our view</span>
-      <span class="nb">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">addSubview</span><span class="p">(</span><span class="n">customSC</span><span class="p">)</span>
+      <span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">customSC</span><span class="p">)</span>
   <span class="p">}</span>
 
-  <span class="cm">/**</span>
-<span class="cm">    Handler for when custom Segmented Control changes and will change the</span>
-<span class="cm">    background color of the view depending on the selection.</span>
-<span class="cm">   */</span>
-  <span class="k">func</span> <span class="n">changeColor</span><span class="p">(</span><span class="nl">sender</span><span class="p">:</span> <span class="bp">UISegmentedControl</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">println</span><span class="p">(</span><span class="s">&quot;Change color handler is called.&quot;</span><span class="p">)</span>
-      <span class="n">print</span><span class="p">(</span><span class="s">&quot;Changing Color to &quot;</span><span class="p">)</span>
-      <span class="k">switch</span> <span class="n">sender</span><span class="p">.</span><span class="n">selectedSegmentIndex</span> <span class="p">{</span>
-      <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
-          <span class="nb">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="bp">UIColor</span><span class="p">.</span><span class="n">greenColor</span><span class="p">()</span>
-          <span class="n">println</span><span class="p">(</span><span class="s">&quot;Green&quot;</span><span class="p">)</span>
-      <span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
-          <span class="nb">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="bp">UIColor</span><span class="p">.</span><span class="n">blueColor</span><span class="p">()</span>
-          <span class="n">println</span><span class="p">(</span><span class="s">&quot;Blue&quot;</span><span class="p">)</span>
-      <span class="k">default</span><span class="o">:</span>
-          <span class="nb">self</span><span class="p">.</span><span class="n">view</span><span class="p">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="bp">UIColor</span><span class="p">.</span><span class="n">purpleColor</span><span class="p">()</span>
-          <span class="n">println</span><span class="p">(</span><span class="s">&quot;Purple&quot;</span><span class="p">)</span>
+  <span class="cm">/**
+    Handler for when custom Segmented Control changes and will change the
+    background color of the view depending on the selection.
+   */</span>
+  <span class="kd">func</span> <span class="nf">changeColor</span><span class="p">(</span><span class="nv">sender</span><span class="p">:</span> <span class="kt">UISegmentedControl</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nf">println</span><span class="p">(</span><span class="s">"Change color handler is called."</span><span class="p">)</span>
+      <span class="nf">print</span><span class="p">(</span><span class="s">"Changing Color to "</span><span class="p">)</span>
+      <span class="k">switch</span> <span class="n">sender</span><span class="o">.</span><span class="n">selectedSegmentIndex</span> <span class="p">{</span>
+      <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
+          <span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="o">.</span><span class="nf">greenColor</span><span class="p">()</span>
+          <span class="nf">println</span><span class="p">(</span><span class="s">"Green"</span><span class="p">)</span>
+      <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
+          <span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="o">.</span><span class="nf">blueColor</span><span class="p">()</span>
+          <span class="nf">println</span><span class="p">(</span><span class="s">"Blue"</span><span class="p">)</span>
+      <span class="k">default</span><span class="p">:</span>
+          <span class="k">self</span><span class="o">.</span><span class="n">view</span><span class="o">.</span><span class="n">backgroundColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="o">.</span><span class="nf">purpleColor</span><span class="p">()</span>
+          <span class="nf">println</span><span class="p">(</span><span class="s">"Purple"</span><span class="p">)</span>
       <span class="p">}</span>
   <span class="p">}</span>
 
-  <span class="kr">override</span> <span class="k">func</span> <span class="n">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
-      <span class="nb">super</span><span class="p">.</span><span class="n">viewDidLoad</span><span class="p">()</span>
+  <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
       <span class="c1">// Do any additional setup after loading the view, typically from a nib.</span>
   <span class="p">}</span>
 
-  <span class="kr">override</span> <span class="k">func</span> <span class="n">didReceiveMemoryWarning</span><span class="p">()</span> <span class="p">{</span>
-      <span class="nb">super</span><span class="p">.</span><span class="n">didReceiveMemoryWarning</span><span class="p">()</span>
+  <span class="k">override</span> <span class="kd">func</span> <span class="nf">didReceiveMemoryWarning</span><span class="p">()</span> <span class="p">{</span>
+      <span class="k">super</span><span class="o">.</span><span class="nf">didReceiveMemoryWarning</span><span class="p">()</span>
       <span class="c1">// Dispose of any resources that can be recreated.</span>
   <span class="p">}</span>
 <span class="p">}</span>

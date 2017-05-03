@@ -77,8 +77,8 @@ with all the other initializers in alphabetical order. I added a <code>my_app.rb
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># My application specific configurations</span>
 <span class="c1"># In form of:</span>
 <span class="c1"># MyApp::Application.config.x.&lt;KEY_NAME&gt; = &lt;VALUE_NAME&gt;</span>
-<span class="no">MyApp</span><span class="o">::</span><span class="no">Application</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">retries</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="no">MyApp</span><span class="o">::</span><span class="no">Application</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">log_level</span> <span class="o">=</span> <span class="ss">:debug</span>
+<span class="no">MyApp</span><span class="o">::</span><span class="no">Application</span><span class="p">.</span><span class="nf">config</span><span class="p">.</span><span class="nf">x</span><span class="p">.</span><span class="nf">retries</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="no">MyApp</span><span class="o">::</span><span class="no">Application</span><span class="p">.</span><span class="nf">config</span><span class="p">.</span><span class="nf">x</span><span class="p">.</span><span class="nf">log_level</span> <span class="o">=</span> <span class="ss">:debug</span>
 </code></pre></div>
 <p>That&#39;s it! You can now add application specific configuration variables. Be careful though, you shouldn&#39;t use this to
 store sensitive data such as secret keys or passwords!</p>
@@ -92,34 +92,34 @@ defining custom configuration options&quot;.</p>
 
 <p>Just for clarity, if you look in <code>config/application.rb</code> you&#39;ll see the following code which following <code>module</code> would be
 your application&#39;s name, which as a second example name is <code>MyRailsApplication</code>.</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="no">File</span><span class="o">.</span><span class="n">expand_path</span><span class="p">(</span><span class="s1">&#39;../boot&#39;</span><span class="p">,</span> <span class="bp">__FILE__</span><span class="p">)</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="no">File</span><span class="p">.</span><span class="nf">expand_path</span><span class="p">(</span><span class="s1">'../boot'</span><span class="p">,</span> <span class="kp">__FILE__</span><span class="p">)</span>
 
-<span class="nb">require</span> <span class="s1">&#39;rails/all&#39;</span>
+<span class="nb">require</span> <span class="s1">'rails/all'</span>
 
 <span class="c1"># Require the gems listed in Gemfile, including any gems</span>
-<span class="c1"># you&#39;ve limited to :test, :development, or :production.</span>
-<span class="no">Bundler</span><span class="o">.</span><span class="n">require</span><span class="p">(</span><span class="o">*</span><span class="no">Rails</span><span class="o">.</span><span class="n">groups</span><span class="p">)</span>
+<span class="c1"># you've limited to :test, :development, or :production.</span>
+<span class="no">Bundler</span><span class="p">.</span><span class="nf">require</span><span class="p">(</span><span class="o">*</span><span class="no">Rails</span><span class="p">.</span><span class="nf">groups</span><span class="p">)</span>
 
 <span class="k">module</span> <span class="nn">MyRailsApplication</span>
   <span class="k">class</span> <span class="nc">Application</span> <span class="o">&lt;</span> <span class="no">Rails</span><span class="o">::</span><span class="no">Application</span>
-<span class="o">.</span><span class="n">.</span><span class="o">.</span>
+<span class="p">.</span><span class="nf">.</span><span class="o">.</span>
 </code></pre></div>
 <p>Thus with <code>MyRailsApplication</code>, I could create a file under <code>config/initializers/</code> as <code>myrailsapplication.rb</code> with the
 contents:</p>
 <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># My application specific configurations</span>
 <span class="c1"># In form of:</span>
 <span class="c1"># MyApp::Application.config.x.&lt;KEY_NAME&gt; = &lt;VALUE_NAME&gt;</span>
-<span class="no">MyRailsApplication</span><span class="o">::</span><span class="no">Application</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">retries</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="no">MyRailsApplication</span><span class="o">::</span><span class="no">Application</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">log_level</span> <span class="o">=</span> <span class="ss">:debug</span>
-<span class="no">MyRailsApplication</span><span class="o">::</span><span class="no">Application</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">session_expiration</span> <span class="o">=</span> <span class="mi">2</span><span class="o">.</span><span class="n">week</span>
+<span class="no">MyRailsApplication</span><span class="o">::</span><span class="no">Application</span><span class="p">.</span><span class="nf">config</span><span class="p">.</span><span class="nf">x</span><span class="p">.</span><span class="nf">retries</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="no">MyRailsApplication</span><span class="o">::</span><span class="no">Application</span><span class="p">.</span><span class="nf">config</span><span class="p">.</span><span class="nf">x</span><span class="p">.</span><span class="nf">log_level</span> <span class="o">=</span> <span class="ss">:debug</span>
+<span class="no">MyRailsApplication</span><span class="o">::</span><span class="no">Application</span><span class="p">.</span><span class="nf">config</span><span class="p">.</span><span class="nf">x</span><span class="p">.</span><span class="nf">session_expiration</span> <span class="o">=</span> <span class="mi">2</span><span class="p">.</span><span class="nf">week</span>
 </code></pre></div>
 <h2>Using Custom Configurations</h2>
 
 <p>Finally, to use your custom configurations anywhere, you can actually now do the following anywhere in your application
 to use:</p>
-<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Rails</span><span class="o">.</span><span class="n">configuration</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">retries</span>    <span class="c1"># =&gt; 3</span>
-<span class="no">Rails</span><span class="o">.</span><span class="n">configuration</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">log_level</span>  <span class="c1"># =&gt; :debug</span>
-<span class="no">Rails</span><span class="o">.</span><span class="n">configuration</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">session_expiration</span>  <span class="c1"># =&gt; 14 days</span>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Rails</span><span class="p">.</span><span class="nf">configuration</span><span class="p">.</span><span class="nf">x</span><span class="p">.</span><span class="nf">retries</span>    <span class="c1"># =&gt; 3</span>
+<span class="no">Rails</span><span class="p">.</span><span class="nf">configuration</span><span class="p">.</span><span class="nf">x</span><span class="p">.</span><span class="nf">log_level</span>  <span class="c1"># =&gt; :debug</span>
+<span class="no">Rails</span><span class="p">.</span><span class="nf">configuration</span><span class="p">.</span><span class="nf">x</span><span class="p">.</span><span class="nf">session_expiration</span>  <span class="c1"># =&gt; 14 days</span>
 </code></pre></div>
 <p><strong>Notice</strong> that we use <code>Rails.configuration</code> to access the custom configurations. And that is all folks! Hope you
 learned a bit from the tip, and realize, sometimes they hide things in the release notes that are helpful!</p>
