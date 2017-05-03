@@ -34,7 +34,7 @@ end
 desc "Build _site/"
 task :build do
   puts "\n## Building"
-  status = system("jekyll build")
+  status = system("bundle exec jekyll build")
   puts status ? "Success" : "Failed"
 end
 

@@ -45,7 +45,7 @@
   <p>I&#39;ve been working with <a href="https://www.kernel.org/doc/Documentation/cgroups/cgroups.txt">Control Groups</a> recently to investigate a performance issue. I have not found a
 solution yet but will post again if that does happen! As for CGroups, I came across an issue that although simple
 if I just read the documentation, didn&#39;t seem obvious by the error:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>Errno 28<span class="o">]</span> No space left on device
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>Errno 28] No space left on device
 </code></pre></div>
 <!--more-->
 
@@ -53,13 +53,13 @@ if I just read the documentation, didn&#39;t seem obvious by the error:</p>
 
 <p>So other example errors could be as follows which all boil down to &quot;No space left on device&quot; and just depends on how
 you were creating the CGroups:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>Errno 28<span class="o">]</span> No space left on device
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">[</span>Errno 28] No space left on device
 bash: <span class="nb">echo</span>: write error: No space left on device
 Error changing group of pid 1234: No space left on device
 </code></pre></div>
 <p>This seemed really odd because I was pretty sure I didn&#39;t consume all my space on the system. Looking at the system
 the following was there:</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>df -h
+<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>df -h
 Filesystem            Size  Used Avail Use% Mounted on
 /dev/md0              9.9G  1.6G  7.8G  18% /
 /dev/md1              9.9G  1.2G  8.2G  13% /var
@@ -78,7 +78,7 @@ the <code>cpuset.cpus</code> and <code>cpuset.mems</code> parameters must be def
 
 <p>Here is how my CGroup was defined (this is a general format, please read documentation on how to actually change
 things if you are interested in using CGroups):</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">group main_process {
+<div class="highlight"><pre><code class="language-" data-lang="">group main_process {
    cpuset {
       cpuset.cpus = 0-6;
    }
@@ -89,7 +89,7 @@ follow directions? That&#39;s okay, at least I went back to read the documentati
 myself for a bit. All I had to do was make sure to define <code>cpuset.mems</code> and the error would disappear! Apparently
 this incorrect initialization causes the CGroup mount to not work correctly! The new modified CGroup definition
 should be as follows:</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">group main_process {
+<div class="highlight"><pre><code class="language-" data-lang="">group main_process {
    cpuset {
       cpuset.cpus = 0-6;
       cpuset.mems = 0;

@@ -1,6 +1,8 @@
 name: Adventures with Richard Hsu
 url: "http://www.richardhsu.me"
 
+gems: [jekyll-paginate, redcarpet]
+
 excerpt_separator: <!--more-->
 markdown: redcarpet
 paginate: 5

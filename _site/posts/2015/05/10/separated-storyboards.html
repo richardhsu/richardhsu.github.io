@@ -161,45 +161,45 @@ you will get an error on initializing the storyboard</strong>.
 <li>Finally, to use the separate storyboard we will now add code to <code>viewDidLoad</code>
 in <code>FirstTabViewController.swift</code>:</li>
 </ol>
-<div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">import</span> <span class="n">UIKit</span>
+<div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">import</span> <span class="kt">UIKit</span>
 
-<span class="k">class</span> <span class="nl">FirstTabViewController</span><span class="p">:</span> <span class="bp">UIViewController</span> <span class="p">{</span>
+<span class="kd">class</span> <span class="kt">FirstTabViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
 
-    <span class="kr">override</span> <span class="k">func</span> <span class="n">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nb">super</span><span class="p">.</span><span class="n">viewDidLoad</span><span class="p">()</span>
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
 
         <span class="c1">// Do any additional setup after loading the view.</span>
         <span class="c1">// Instantiate the separate storyboard for First section and load it</span>
-        <span class="k">var</span> <span class="n">storyboard</span> <span class="o">=</span> <span class="bp">UIStoryboard</span><span class="p">(</span><span class="nl">name</span><span class="p">:</span> <span class="s">&quot;First&quot;</span><span class="p">,</span> <span class="nl">bundle</span><span class="p">:</span> <span class="nb">nil</span><span class="p">)</span>
-        <span class="k">var</span> <span class="n">controller</span> <span class="o">=</span> <span class="n">storyboard</span><span class="p">.</span><span class="n">instantiateInitialViewController</span><span class="p">()</span> <span class="kt">as</span><span class="o">!</span> <span class="bp">UIViewController</span>
-        <span class="n">addChildViewController</span><span class="p">(</span><span class="n">controller</span><span class="p">)</span>
-        <span class="n">view</span><span class="p">.</span><span class="n">addSubview</span><span class="p">(</span><span class="n">controller</span><span class="p">.</span><span class="n">view</span><span class="p">)</span>
-        <span class="n">controller</span><span class="p">.</span><span class="n">didMoveToParentViewController</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span>
+        <span class="k">var</span> <span class="nv">storyboard</span> <span class="o">=</span> <span class="kt">UIStoryboard</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"First"</span><span class="p">,</span> <span class="nv">bundle</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+        <span class="k">var</span> <span class="nv">controller</span> <span class="o">=</span> <span class="n">storyboard</span><span class="o">.</span><span class="nf">instantiateInitialViewController</span><span class="p">()</span> <span class="k">as!</span> <span class="kt">UIViewController</span>
+        <span class="nf">addChildViewController</span><span class="p">(</span><span class="n">controller</span><span class="p">)</span>
+        <span class="n">view</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">controller</span><span class="o">.</span><span class="n">view</span><span class="p">)</span>
+        <span class="n">controller</span><span class="o">.</span><span class="nf">didMoveToParentViewController</span><span class="p">(</span><span class="k">self</span><span class="p">)</span>
     <span class="p">}</span>
 
-    <span class="kr">override</span> <span class="k">func</span> <span class="n">didReceiveMemoryWarning</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nb">super</span><span class="p">.</span><span class="n">didReceiveMemoryWarning</span><span class="p">()</span>
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">didReceiveMemoryWarning</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">didReceiveMemoryWarning</span><span class="p">()</span>
         <span class="c1">// Dispose of any resources that can be recreated.</span>
     <span class="p">}</span>
 
-    <span class="cm">/*</span>
-<span class="cm">    // MARK: - Navigation</span>
+    <span class="cm">/*
+    // MARK: - Navigation
 
-<span class="cm">    // In a storyboard-based application, you will often want to do a little preparation before navigation</span>
-<span class="cm">    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {</span>
-<span class="cm">        // Get the new view controller using segue.destinationViewController.</span>
-<span class="cm">        // Pass the selected object to the new view controller.</span>
-<span class="cm">    }</span>
-<span class="cm">    */</span>
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */</span>
 
 <span class="p">}</span>
 </code></pre></div>
 <p>The most important lines are:</p>
-<div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">var</span> <span class="n">storyboard</span> <span class="o">=</span> <span class="bp">UIStoryboard</span><span class="p">(</span><span class="nl">name</span><span class="p">:</span> <span class="s">&quot;First&quot;</span><span class="p">,</span> <span class="nl">bundle</span><span class="p">:</span> <span class="nb">nil</span><span class="p">)</span>
-<span class="k">var</span> <span class="n">controller</span> <span class="o">=</span> <span class="n">storyboard</span><span class="p">.</span><span class="n">instantiateInitialViewController</span><span class="p">()</span> <span class="kt">as</span><span class="o">!</span> <span class="bp">UIViewController</span>
-<span class="n">addChildViewController</span><span class="p">(</span><span class="n">controller</span><span class="p">)</span>
-<span class="n">view</span><span class="p">.</span><span class="n">addSubview</span><span class="p">(</span><span class="n">controller</span><span class="p">.</span><span class="n">view</span><span class="p">)</span>
-<span class="n">controller</span><span class="p">.</span><span class="n">didMoveToParentViewController</span><span class="p">(</span><span class="nb">self</span><span class="p">)</span>
+<div class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">var</span> <span class="nv">storyboard</span> <span class="o">=</span> <span class="kt">UIStoryboard</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="s">"First"</span><span class="p">,</span> <span class="nv">bundle</span><span class="p">:</span> <span class="kc">nil</span><span class="p">)</span>
+<span class="k">var</span> <span class="nv">controller</span> <span class="o">=</span> <span class="n">storyboard</span><span class="o">.</span><span class="nf">instantiateInitialViewController</span><span class="p">()</span> <span class="k">as!</span> <span class="kt">UIViewController</span>
+<span class="nf">addChildViewController</span><span class="p">(</span><span class="n">controller</span><span class="p">)</span>
+<span class="n">view</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">controller</span><span class="o">.</span><span class="n">view</span><span class="p">)</span>
+<span class="n">controller</span><span class="o">.</span><span class="nf">didMoveToParentViewController</span><span class="p">(</span><span class="k">self</span><span class="p">)</span>
 </code></pre></div>
 <p>These are the 5 lines of code that you&#39;ll use when wanting to use a separate storyboard and load it into
 your tab.</p>
