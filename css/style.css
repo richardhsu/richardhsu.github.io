@@ -7,8 +7,8 @@
 /* General HTML Elements */
 body {
   background: #fdfdfd;
-  color: #222222;
-  font: normal normal 14px/18px 'Open Sans', 'Helvetica Neue', Helvetica, Arial;
+  color: #515151;
+  font: normal normal 16px/32px 'Open Sans', 'Helvetica Neue', Helvetica, Arial;
   line-height: 1.8em;
   margin: 0 auto;
   padding: 0;
@@ -40,10 +40,10 @@ pre {
 }
 
 code {
-  padding: 2px 4px;
-  color: #d14;
+  padding: 2px 8px;
+  color: #212121;
   white-space: nowrap;
-  background-color: #f7f7f9;
+  background-color: #f7f7f7;
   border: 1px solid #e1e1e8;
 }
 
@@ -256,13 +256,12 @@ ul.tag-cloud li {
 .post-header h1 {
   margin: 10px 0;
   padding: 0;
-  font-weight: bold;
+  font-weight: 300;
 }
 
 .post-header h1 a:link, .post-header h1 a:visited {
   color: #338866;
   text-decoration: none;
-  text-transform: uppercase;
 }
 
 .post-header h1 a:hover, .post-header h1 a:active {
