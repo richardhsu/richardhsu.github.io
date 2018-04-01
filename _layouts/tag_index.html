@@ -1,9 +1,9 @@
 ---
 layout: default
 ---
-<div class="back-to-index"><a href="{{ site.url }}/tag/">Back to Tag Index</a></div>
 <div class="tag-header">
-  <p>Posts Tagged <strong>"{{ page.tag }}"</strong></p>
+  <h2>{{ page.tag }}</h2>
+  <hr />
 </div>
 
 {% for post in paginator.posts %}
@@ -26,14 +26,14 @@ layout: default
 
 <!-- Page Navigation -->
 <div id="post-navigation">
-  <div class="left">
+  <div class="post-link left-post left">
     {% if paginator.next_page %}
       <a href="{{ paging_root }}{{ paginator.next_page_path }}">Older</a>
     {% else %}
       <a href="#" class="disabled">Older</a>
     {% endif %}
   </div>
-  <div class="right">
+  <div class="post-link right-post right">
     {% if paginator.previous_page %}
       <a href="{{ paging_root }}{{ paginator.previous_page_path }}">Newer</a>
     {% else %}

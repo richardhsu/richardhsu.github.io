@@ -15,16 +15,18 @@ layout: default
   {{ content }}
   <!-- Page Navigation -->
   <div id="post-navigation">
-    <div class="left">
-      {% if page.previous %}
+    {% if page.previous %}
+      <div class="post-link left-post">
+        <div class="sub-nav">Previous Post</div>
         <a href="{{ site.url }}{{ page.previous.url }}">{{ page.previous.title }}</a>
-      {% endif %}
-    </div>
-    <div class="right">
-      {% if page.next %}
+      </div>
+    {% endif %}
+    {% if page.next %}
+      <div class="post-link right-post">
+        <div class="sub-nav">Next Post</div>
         <a href="{{ site.url}}{{ page.next.url }}">{{ page.next.title }}</a>
-      {% endif %}
-    </div>
+      </div>
+    {% endif %}
   </div>
 
   {% if page.comments %}

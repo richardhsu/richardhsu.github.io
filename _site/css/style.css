@@ -8,7 +8,7 @@
 body {
   background: #fdfdfd;
   color: #515151;
-  font: normal normal 18px 'Open Sans', 'Helvetica Neue', Helvetica, Arial;
+  font: normal normal 18px Karla, 'Open Sans', 'Helvetica Neue', Helvetica, Arial;
   line-height: 2.0em;
   margin: 0 auto;
   padding: 0;
@@ -161,6 +161,10 @@ img {
 .content-jar {  /* Center to content area */
   margin: 0 auto;
   max-width: 960px;
+  padding: 10px;
+}
+
+#feed .content-jar {
   padding: 30px;
 }
 
@@ -186,11 +190,10 @@ ul.pages, ul.tag-cloud {
 ul.pages li {
   background: #007755;
   float: left;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
   margin: 0 5px 0 0;
-  padding: 2px 6px;
-  text-transform: uppercase;
+  padding: 2px 15px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -211,18 +214,21 @@ ul.tag-cloud li {
   font-size: 12px;
   font-weight: bold;
   padding: 2px 6px;
-  text-transform: uppercase;
 }
 
 .tag-header {
-  background-color: #eeeeee;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
   font-size: 18px;
   margin: 0 0 20px 0;
   padding: 5px 10px;
-  text-align: right;
+  text-align: center;
+}
+
+.tag-header hr {
+  width: 50%;
+  border: 2px solid #f4f4f4;
 }
 
 @media all and (min-width: 400px) {
@@ -288,7 +294,7 @@ ul.tag-cloud li {
 }
 
 .post-date {
-  color: #555555;
+  color: #888888;
   font-weight: bold;
   margin-right: 10px;
 }
@@ -298,13 +304,29 @@ ul.tag-cloud li {
   margin: 40px 0 10px 0;
 }
 
-#post-navigation .left,
-#post-navigation .right {
-  background-color: #f4f4f4;
+#post-navigation .post-link {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  padding: 5px;
+  padding: 5px 15px;
+  margin: 10px 0;
+}
+
+#post-navigation .left-post {
+  background: linear-gradient(to right, #f4f4f4, #fff);
+  text-align: left;
+}
+
+#post-navigation .right-post {
+  background: linear-gradient(to right, #fff, #f4f4f4);
+  text-align: right;
+}
+
+#post-navigation .sub-nav {
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+  line-height: 30px;
 }
 
 .single-post #post-navigation {
@@ -318,12 +340,12 @@ ul.tag-cloud li {
   padding: 0 0.3em;
 }
 
-#post-navigation .left a:before {
+#post-navigation .left-post a:before {
   content: '\00AB';
   padding: 0 0.3em;
 }
 
-#post-navigation .right a:after {
+#post-navigation .right-post a:after {
   content: '\00BB';
   padding: 0 0.3em;
 }
@@ -338,7 +360,12 @@ ul.tag-cloud li {
 
 .back-to-index {
   margin-bottom: 10px;
-  text-transform: uppercase;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  padding: 5px 15px;
+  margin: 15px 0 25px 0;
+  background-color: #f4f4f4;
 }
 
 .back-to-index a:before {
