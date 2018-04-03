@@ -38,6 +38,17 @@ task :build do
   puts status ? "Success" : "Failed"
 end
 
+desc "Sync Jekyll Algolia"
+task :sync do
+  puts "\n## Syncing Algolia"
+  status = system("bundle exec jekyll algolia")
+  puts status ? "Success" : "Failed"
+end
+
 desc "Build, commit, and deploy _site/"
 task :publish => [:build, :commit, :deploy] do
+end
+
+desc "Build, commit, deploy, and sync _site/"
+task :publish_and_sync => [:build, :commit, :deploy, :sync] do
 end
