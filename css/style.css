@@ -385,3 +385,29 @@ input.gsc-input {
   border-radius: 3px;
   padding: 4px 8px;
 }
+
+/* Algolia Overrides */
+div.ais-search-box {
+  max-width: 960px;
+  width: 100% !important;
+}
+
+em.ais-Highlight {
+  color: #22bb99;
+  font-style: normal;
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+div#pagination {
+  text-align: center;
+}
+
+ul.ais-pagination {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+li.ais-pagination--item {
+  min-width: 75px;
+}
