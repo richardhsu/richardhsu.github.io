@@ -179,7 +179,7 @@ img {
   margin: 10px auto;
 }
 
-ul.pages, ul.tag-cloud {
+ul.pages {
   list-style-type: none;
   margin: 10px auto;
   padding: 0;
@@ -208,14 +208,6 @@ ul.pages li a:hover, ul.pages li a:active {
   border-bottom: 1px dotted #ffffff;
 }
 
-ul.tag-cloud li {
-  color: #000000;
-  font-weight: normal;
-  font-size: 12px;
-  font-weight: bold;
-  padding: 2px 6px;
-}
-
 .tag-header {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -231,37 +223,24 @@ ul.tag-cloud li {
   border: 2px solid #f4f4f4;
 }
 
-@media all and (min-width: 400px) {
-  .tag-cloud {
-    column-count: 2;
-    column-gap: 5px;
-    -moz-column-count: 2;
-    -moz-column-gap: 5px;
-    -webkit-column-count: 2;
-    -webkit-column-gap: 5px;
-  }
+.tag-cloud-container {
+  text-align: center;
 }
 
-@media all and (min-width: 600px) {
-  .tag-cloud {
-    column-count: 3;
-    column-gap: 5px;
-    -moz-column-count: 3;
-    -moz-column-gap: 5px;
-    -webkit-column-count: 3;
-    -webkit-column-gap: 5px;
-  }
+.tag {
+  color: #b0b0b0;
+  padding: 5px 10px;
+  background: #f5f5f5;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  white-space: nowrap;
 }
 
-@media all and (min-width: 900px) {
-  .tag-cloud {
-    column-count: 5;
-    column-gap: 5px;
-    -moz-column-count: 5;
-    -moz-column-gap: 5px;
-    -webkit-column-count: 5;
-    -webkit-column-gap: 5px;
-  }
+.tag-count {
+  padding: 5px 5px 5px 10px;
+  color: #505050;
+  white-space: nowrap;
 }
 
 .post {

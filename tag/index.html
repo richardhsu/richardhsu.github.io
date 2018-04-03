@@ -4,19 +4,19 @@ title: Tags
 ---
 
 <div class="tag-header">
-  <p><strong>Tag Cloud</strong></p>
+  <h1><strong>Tag Cloud</strong></h1>
+  <p>Find all the topics I've discussed through tags!</p>
+  <hr />
 </div>
 
 {% capture site_tags %}{% for tag in site.tags %}{{ tag[0] }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
 {% assign tags = site_tags | split:',' | sort %}
 <div class="tag-cloud-container">
-  <ul class="tag-cloud">
   {% for item in (0..site.tags.size) %}{% unless forloop.last %}
     {% capture tag %}{{ tags[item] | strip_newlines }}{% endcapture %}
-    <li><i class="fa fa-tag"></i> &nbsp; <a href="/tag/{{ tag | replace: ' ','-' | downcase }}">{{ tag }}</a> ({{ site.tags[tag].size }})</li>
+    <span class="tag"><i class="fa fa-tag"></i> &nbsp; <a href="/tag/{{ tag | replace: ' ','-' | downcase }}">{{ tag }}</a> <span class="tag-count">{{ site.tags[tag].size }}</span></span>
   {% endunless %}
   {% endfor %}
-  </ul>
 </div>
 <br />
 <div class="clearfix"></div>
