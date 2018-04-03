@@ -1,13 +1,18 @@
 name: Adventures with Richard Hsu
 url: "https://www.richardhsu.me"
 
-plugins: [jekyll-paginate, redcarpet]
+plugins: [jekyll-paginate, redcarpet, jekyll-algolia]
 
 excerpt_separator: <!--more-->
 markdown: redcarpet
-paginate: 5
 paginate_path: "page:num"
+paginate: '5'
 permalink: /posts/:year/:month/:day/:title.html
+
+algolia:
+  application_id: 5HK1S8TFEN
+  index_name: prod-richardhsu-me-jekyll
+  search_only_api_key: 348ef549e78986899861fda13f7c039d
 
 redcarpet:
   extensions: [tables]

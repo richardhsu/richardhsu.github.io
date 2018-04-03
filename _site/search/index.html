@@ -25,7 +25,7 @@
       <ul class="pages">
         <li><a href="https://www.richardhsu.me/"><i class="fa fa-home"></i> Home</a></li>
         <!-- <li><a href="https://www.richardhsu.me/tag/"><i class="fa fa-tag"></i> Tags</a></li> -->
-        <!-- <li><a href="https://www.richardhsu.me/search/"><i class="fa fa-search"></i> Search Blog</a></li> -->
+        <li><a href="https://www.richardhsu.me/search/"><i class="fa fa-search"></i> Search Blog</a></li>
       </ul>
     </div>
   </div>
@@ -34,21 +34,94 @@
   <div class="container">
     <div class="content-jar">
       <!-- Beginning of Posts Listing -->
-      <div id="google-search">
+      <div id="search-searchbar"></div>
+<div id="search-hits"></div>
+<div id="pagination"></div>
+
+<!-- Including InstantSearch.js library and styling -->
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.3/dist/instantsearch.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.0/moment.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.3/dist/instantsearch.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.6.3/dist/instantsearch-theme-algolia.min.css">
+
 <script>
-  (function() {
-    var cx = '000343433109062363842:mh2nkb41n-e';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-        '//www.google.com/cse/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
+// Instanciating InstantSearch.js with Algolia credentials
+const search = instantsearch({
+  appId: '5HK1S8TFEN',
+  indexName: 'prod-richardhsu-me-jekyll',
+  apiKey: '348ef549e78986899861fda13f7c039d'
+});
+
+// Adding configuration
+search.addWidget(
+  instantsearch.widgets.configure({
+    hitsPerPage: 5,
+    filters: '(type:post)',
+  })
+);
+
+// Adding searchbar and results widgets
+search.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '#search-searchbar',
+    placeholder: 'Search posts...',
+    poweredBy: true // This is required if you're on the free Community plan
+  })
+);
+search.addWidget(
+  instantsearch.widgets.hits({
+    container: '#search-hits',
+    transformData: {
+      allItems: function(hits) {
+        return hits.filter(hit.type == "post");
+      }
+    },
+    templates: {
+      empty: 'No posts found',
+      item: function(hit) {
+        var tags = '';
+        for (var i = 0; i < hit.tags.length; i++) {
+          tags += '<a href="/tag/' + hit.tags[i].replace(' ', '-').toLowerCase() + '" rel="tag">' +
+                  hit.tags[i] + '</a>';
+          if (i < hit.tags.length - 1) {
+            tags += ', ';
+          }
+        }
+        return `
+        <div class="post">
+          <div class="post-header">
+            <h1><a href="${hit.url}">${hit._highlightResult.title.value}</a></h1>
+            <span class="post-date"><i class="fa fa-calendar"></i> ${moment.unix(hit.date).format('MMM D, YYYY')}</span>
+            <span class="post-tags"><i class="fa fa-tag"></i>
+              ${tags}
+            </span>
+          </div>
+          <p>${hit._highlightResult.html.value}</p>
+          <a href="${hit.url}">Continue reading &rarr;</a>
+        </div>
+        `;
+      }
+    }
+  })
+);
+search.addWidget(
+  instantsearch.widgets.pagination({
+    container: '#pagination',
+    maxPages: 20,
+    scrollTo: false,
+    labels: {
+      previous: 'Previous',
+      next: 'Next',
+      first: 'First',
+      last: 'Last',
+    }
+  })
+);
+
+// Starting the search
+search.start();
 </script>
-<gcse:search></gcse:search>
-</div>
+
 
       <!-- /End Posts Listing -->
       <br />
