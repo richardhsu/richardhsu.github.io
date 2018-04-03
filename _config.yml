@@ -13,6 +13,16 @@ algolia:
   application_id: 5HK1S8TFEN
   index_name: prod-richardhsu-me-jekyll
   search_only_api_key: 348ef549e78986899861fda13f7c039d
+  settings:
+    attributesToHighlight:
+      - title
+      - headings
+      - content
+      - html
+      - collection
+      - categories
+      - tags
+      - excerpt_html
 
 redcarpet:
   extensions: [tables]
