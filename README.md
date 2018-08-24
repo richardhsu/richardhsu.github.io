@@ -3,6 +3,15 @@
 This repository is for my Jekyll Blog that I hope to update with anything and
 everything! Come join me on my adventures!
 
+## Previewing
+
+To preview it you can run the following to build after changes are made and then serve to view locally:
+
+```
+bundle exec jekyll build
+bundle exec jekyll serve
+```
+
 ## Publishing
 
 ```
